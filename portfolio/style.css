@@ -224,3 +224,30 @@ body {
     font-size: 18px;
     line-height: 36px;
 }
+
+/* ============== Portfolio section ============== */
+
+.portfolio{
+    padding-top: 100px;
+}
+.portfolio-buttons{
+    display: flex;
+    justify-content: center;
+}
+.portfolio-button{
+    margin: 60px 2.5px;
+    color: #BDAE82;
+    background-color: #000;
+    border: 2px solid #BDAE82;
+}
+.portfolio-button:last-child{
+    color:#000;
+    background-color: #BDAE82;
+    border: 0;
+}
+.portfolio-img__container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px 0;
+}
