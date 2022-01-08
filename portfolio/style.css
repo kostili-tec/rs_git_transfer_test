@@ -251,3 +251,28 @@ body {
     flex-wrap: wrap;
     gap: 25px 0;
 }
+/* ============= Video section ================ */
+
+.video{
+    padding-top: 100px;
+}
+.video-player{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+.video-button{
+    position: absolute;
+    background: transparent;
+    background-image: url(./assets/svg/play_button.svg);
+    background-size: 130px;
+    border: none;
+    height: 130px;
+    width: 130px;
+}
+.video-player__img{
+    height: 705px;
+    width: 1400px;
+}
