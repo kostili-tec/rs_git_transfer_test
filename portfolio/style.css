@@ -323,3 +323,52 @@ body {
 .price-item__button{
     margin-top: 40px;
 }
+/* ============= Contacts section =============== */
+.contacts{
+    height: 700px;
+    background-image: url(./assets/img/bg_contacts.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.form-container{
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 60px 20px;
+
+}
+.contacts-form{  
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 445px;
+    
+}
+.contacts-title{
+    position: unset;    
+    justify-content: unset;
+    left: 0;
+    padding-bottom: 40px;
+}
+.contacts-input{
+    background: transparent;
+    border: 2px solid #BDAE82;
+    width: 450px;
+    height: 50px;
+    margin-bottom: 20px; 
+    padding: 5px 20px;  
+}
+
+.contacts-input::placeholder{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;  
+    color: #BDAE82;
+}
+.contacts-textarea{
+    height: 100px;
+    margin-bottom: 30px;
+}
