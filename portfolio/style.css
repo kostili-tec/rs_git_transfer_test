@@ -276,3 +276,50 @@ body {
     height: 705px;
     width: 1400px;
 }
+/* ================= Price section ================= */
+.price {
+    padding-top: 100px;
+    height: 845px;
+}
+.price-items{
+    display: flex;
+    justify-content: center;
+    gap: 0 25px ;
+    padding-top: 60px;
+}
+.price-item{
+    height: 505px;
+    width: 450px;
+    border: 3px solid #BDAE82;
+    text-align: center;
+    padding-top: 40px;
+    
+}
+.price-item__title{
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 56px; 
+    
+}
+.price-item__money{
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 48px;
+    color: #BDAE82;
+    padding: 20px 0; 
+}
+.price-item__text{
+    display: block;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+}
+.price-item__button{
+    margin-top: 40px;
+}
