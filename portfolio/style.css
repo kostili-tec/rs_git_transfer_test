@@ -352,7 +352,7 @@ body {
     padding-bottom: 40px;
 }
 .contacts-input{
-    background: transparent;
+    background: rgba(0, 0, 0, 0.5);
     border: 2px solid #BDAE82;
     width: 450px;
     height: 50px;
