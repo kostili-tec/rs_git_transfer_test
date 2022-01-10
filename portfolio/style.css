@@ -372,3 +372,31 @@ body {
     height: 100px;
     margin-bottom: 30px;
 }
+/* ================ Footer ============== */
+
+.footer {
+    height: 150px;
+    width: auto;
+    background-color: #000;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+}
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+.footer-links__copy {
+    display: flex;
+}
+.footer-github{
+    text-decoration: none;
+    color: #fff;
+}
+.social{
+    text-decoration: none;
+}
