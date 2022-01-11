@@ -377,7 +377,7 @@ body {
 .footer {
     height: 150px;
     width: auto;
-    background-color: #000;
+    /* background-color: #000; */
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
@@ -388,15 +388,28 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    padding: 50px 0;
     
 }
 .footer-links__copy {
     display: flex;
+   
+}
+.footer-links__github{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .footer-github{
     text-decoration: none;
     color: #fff;
 }
+.footer-links__rsschool{
+    margin-right: 35px;
+}
 .social{
     text-decoration: none;
+    margin-right: 14px;
+}
+.social:last-child{
+    margin-right: 0;
 }
