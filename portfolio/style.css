@@ -351,6 +351,12 @@ body {
     left: 0;
     padding-bottom: 40px;
 }
+.contacts-title::after{
+    content: none;
+}
+.contacts-title::before{
+    content: none;
+}
 .contacts-input{
     background: rgba(0, 0, 0, 0.5);
     border: 2px solid #BDAE82;
