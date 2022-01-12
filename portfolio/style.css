@@ -1,0 +1,415 @@
+html{
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+    /* background-color: #000; */  
+}
+.container {    
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: #000;
+  }
+
+  /* ============= HEADER ============ */
+
+.header {
+
+}
+.header-container{    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;    
+    background-image: url('./assets/img/bg.jpg');
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    height: 90px;    
+}
+.nav {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+    color: white;
+}
+.nav-list{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;   
+}
+.nav-item{
+    margin-right: 30px;
+}
+.nav-item:last-child{
+    margin-right: 32px; /* or 31px */
+}
+.nav-link{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+    color: white;
+    text-decoration: none;    
+}
+.nav-lang{
+    display: flex;
+    font-weight: bold;
+    line-height: 50px;
+}
+.nav-lang-item{
+    margin-right: 9px;
+}
+.nav-lang-item:first-child{
+    color: #BDAE82;
+}
+.nav-lang-item:last-child{
+    margin-right: 0;
+}
+
+/* =========== MAIN ============== */
+
+.hero-container {
+    padding: 0;
+}
+.hero{ 
+    height: 820px;
+    background-image: url('./assets/img/bg.jpg');
+    background-size: cover;
+    background-position: center -90px;
+    background-repeat: no-repeat;
+}
+.hero-title{
+    padding-top: 160px;
+    padding-left: 80px;
+}
+.hero-title__h1{
+    margin-bottom: 8px;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 120px;
+}
+.p{    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+}
+.button{
+    height: 55px;
+    width: 220px;
+    border: 0;
+    background-color: #bdae82;
+    cursor: pointer;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;    
+    color: #000;
+}
+.hero-title__p{
+    
+}
+.hero-title__button{
+   margin-top: 27px;
+}
+
+.skills{   
+    height: 482px;
+    padding-top: 100px;
+
+}
+.section-title{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 80px;
+    color: #BDAE82;   
+    
+    
+}
+.line-title{
+    display: flex;   
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: auto;
+    overflow: hidden;
+    
+}
+.section-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 400px;
+    top: 50%;
+    left: 120%;
+    background-color: #BDAE82;
+}
+.section-title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 400px;
+    top: 50%;
+    right: 120%;  
+    background-color: #BDAE82;
+}
+.skills-items{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+.skill-item{
+    width: 320px;
+    height: 240px;
+    text-align: center;
+    background-position: center top;
+    padding-top: 110px;
+}
+.skill-item:nth-child(1){
+    background-image: url('./assets/svg/camera.svg');
+    background-size: 62px 50px;
+    background-repeat: no-repeat;
+}
+.skill-item:nth-child(2){
+    background-image: url('./assets/svg/video.svg');
+    background-size: 60px 50px;
+    background-repeat: no-repeat;
+}
+.skill-item:nth-child(3){
+    background-image: url('./assets/svg/image.svg');
+    background-size: 66px 50px;
+    background-repeat: no-repeat;
+}
+.skill-item:nth-child(4){
+    background-image: url('./assets/svg/mic.svg');
+    background-size: 32px 50px;
+    background-repeat: no-repeat;
+}
+.skill-title{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+.skill-p{
+    font-size: 18px;
+    line-height: 36px;
+}
+
+/* ============== Portfolio section ============== */
+
+.portfolio{
+    padding-top: 100px;
+}
+.portfolio-buttons{
+    display: flex;
+    justify-content: center;
+}
+.portfolio-button{
+    margin: 60px 2.5px;
+    color: #BDAE82;
+    background-color: #000;
+    border: 2px solid #BDAE82;
+}
+.portfolio-button:last-child{
+    color:#000;
+    background-color: #BDAE82;
+    border: 0;
+}
+.portfolio-img__container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px 0;
+}
+/* ============= Video section ================ */
+
+.video{
+    padding-top: 100px;
+}
+.video-player{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+.video-button{
+    position: absolute;
+    background: transparent;
+    background-image: url(./assets/svg/play_button.svg);
+    background-size: 130px;
+    border: none;
+    height: 130px;
+    width: 130px;
+}
+.video-player__img{
+    height: 705px;
+    width: 1400px;
+}
+/* ================= Price section ================= */
+.price {
+    padding-top: 100px;
+    height: 845px;
+}
+.price-items{
+    display: flex;
+    justify-content: center;
+    gap: 0 25px ;
+    padding-top: 60px;
+}
+.price-item{
+    height: 505px;
+    width: 450px;
+    border: 3px solid #BDAE82;
+    text-align: center;
+    padding-top: 40px;
+    
+}
+.price-item__title{
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 56px; 
+    
+}
+.price-item__money{
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 48px;
+    color: #BDAE82;
+    padding: 20px 0; 
+}
+.price-item__text{
+    display: block;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+}
+.price-item__button{
+    margin-top: 40px;
+}
+/* ============= Contacts section =============== */
+.contacts{
+    height: 700px;
+    background-image: url(./assets/img/bg_contacts.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.form-container{
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 60px 20px;
+
+}
+.contacts-form{  
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 445px;
+    
+}
+.contacts-title{
+    position: unset;    
+    justify-content: unset;
+    left: 0;
+    padding-bottom: 40px;
+}
+.contacts-input{
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #BDAE82;
+    width: 450px;
+    height: 50px;
+    margin-bottom: 20px; 
+    padding: 5px 20px;  
+}
+
+.contacts-input::placeholder{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;  
+    color: #BDAE82;
+}
+.contacts-textarea{
+    height: 100px;
+    margin-bottom: 30px;
+}
+/* ================ Footer ============== */
+
+.footer {
+    height: 150px;
+    width: auto;
+    /* background-color: #000; */
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+}
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 50px 0;
+    
+}
+.footer-links__copy {
+    display: flex;
+   
+}
+.footer-links__github{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.footer-github{
+    text-decoration: none;
+    color: #fff;
+}
+.footer-links__rsschool{
+    margin-right: 35px;
+}
+.social{
+    text-decoration: none;
+    margin-right: 14px;
+}
+.social:last-child{
+    margin-right: 0;
+}
