@@ -67,6 +67,10 @@ body {
     color: white;
     text-decoration: none;    
 }
+.nav-link:hover{
+    color: #BDAE82;
+    transition: 0.3s linear;
+}
 .nav-lang{
     display: flex;
     font-weight: bold;
@@ -125,6 +129,10 @@ body {
     font-size: 20px;
     line-height: 40px;    
     color: #000;
+}
+.button:hover {
+    background-color: #8E856D;
+    transition: 0.3s linear;
 }
 .hero-title__p{
     
@@ -245,6 +253,10 @@ body {
     color:#000;
     background-color: #BDAE82;
     border: 0;
+}
+.portfolio-button:last-child:hover{
+    background-color: #8E856D;
+    transition: 0.3s linear;
 }
 .portfolio-img__container{
     display: flex;
