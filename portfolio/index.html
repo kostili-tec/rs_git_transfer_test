@@ -16,8 +16,10 @@
     <header class="header">
         <div class="container header-container">
             <div class="header__logo">
-                <a href="/" class="header__logo-link">
-                    <img src="./assets/svg/header_logo.svg" alt="photograph">
+                <a href="/" class="header__logo-link">                   
+                    <svg class="header-icon">
+                        <use xlink:href="./assets/svg/sprite.svg#header_logo"></use>
+                      </svg>
                 </a>
             </div>
 
@@ -196,32 +198,43 @@
     </main>
 
     <footer class="footer">
+
         <div class="container">
-            <div class="footer-links">
+            
+            <div class="footer-links__container">
                 <div class="footer-links__copy">
                     <pre>@    2022</pre>
                     <div class="footer-links__github">
-                        <a class="footer-github" href="https://github.com/kostili-tec/">kostili-tec</a>
+                        <a class="footer-link" href="https://github.com/kostili-tec/">kostili-tec</a>
                     </div>
                 </div>
                 
-                <div class="footer-links__rsschool">Rolling Scopes School</div>
+                <div class="footer-links__rsschool">
+                    <a class="footer-link" href="https://rs.school/js-stage0/">Rolling Scopes School</a>
+                    </div>
                 <div class="footer-links__social">
                     <a href="" class="social social-inst">
-                        <img src="./assets/svg/inst.svg" alt="Instagram">
+                        <svg class="social-icon">
+                            <use xlink:href="./assets/svg/sprite.svg#inst"></use>
+                          </svg>
                     </a>
                     <a href="" class="social social-fb">
-                        <img src="./assets/svg/fb.svg" alt="Facebook">
+                        <svg class="social-icon">
+                            <use xlink:href="./assets/svg/sprite.svg#fb"></use>
+                          </svg>
                     </a>
                     <a href="" class="social social-tw">
-                        <img src="./assets/svg/tw.svg" alt="Twitter">
+                        <svg class="social-icon">
+                            <use xlink:href="./assets/svg/sprite.svg#tw"></use>
+                          </svg>                        
                     </a>
                     <a href="" class="social social-pint">
-                        <img src="./assets/svg/pinterest.svg" alt="Pinterest">
+                        <svg class="social-icon">
+                            <use xlink:href="./assets/svg/sprite.svg#pinterest"></use>
+                          </svg>
                     </a>
                 </div>
             </div>
-
         </div>
     </footer>
     

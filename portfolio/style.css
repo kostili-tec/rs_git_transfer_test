@@ -20,9 +20,6 @@ body {
 
   /* ============= HEADER ============ */
 
-.header {
-
-}
 .header-container{    
     display: flex;
     flex-wrap: wrap;
@@ -33,6 +30,15 @@ body {
     background-position: center 0;
     background-repeat: no-repeat;
     height: 90px;    
+}
+.header-icon{
+    height: 50px;
+    width: 50px;
+    fill: #fff;
+}
+.header-icon:hover{
+    transition: 0.3s linear;
+    fill: #BDAE82;
 }
 .nav {
     display: flex;
@@ -133,9 +139,6 @@ body {
 .button:hover {
     background-color: #8E856D;
     transition: 0.3s linear;
-}
-.hero-title__p{
-    
 }
 .hero-title__button{
    margin-top: 27px;
@@ -403,24 +406,26 @@ body {
     font-size: 20px;
     line-height: 50px;
 }
-.footer-links{
+.footer-links__container{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    padding: 50px 0;
-    
+    padding: 50px 0;    
 }
 .footer-links__copy {
-    display: flex;
-   
+    display: flex;   
 }
 .footer-links__github{
     padding-left: 20px;
     padding-right: 20px;
 }
-.footer-github{
+.footer-link{
     text-decoration: none;
     color: #fff;
+}
+.footer-link:hover{
+    transition: 0.3s linear;
+    color: #BDAE82;
 }
 .footer-links__rsschool{
     margin-right: 35px;
@@ -432,3 +437,18 @@ body {
 .social:last-child{
     margin-right: 0;
 }
+.social img:hover {
+    fill: #111;
+}
+.footer-links__social{
+    margin-top: 10px;
+}
+.social-icon { 
+    fill: #fff;
+    height: 32px;
+    width: 32px;
+}
+.social-icon:hover{
+    transition: 0.3s linear;
+    fill: #BDAE82;    
+  }
