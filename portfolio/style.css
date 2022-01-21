@@ -16,7 +16,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     background-color: #000;
-  }
+  } 
 
   /* ============= HEADER ============ */
 
@@ -115,6 +115,9 @@ body {
     font-weight: bold;
     font-size: 60px;
     line-height: 120px;
+}
+.hero-title__p{
+    max-width: 470px;
 }
 .p{    
     font-family: Inter;
@@ -453,3 +456,53 @@ body {
     transition: 0.3s linear;
     fill: #BDAE82;    
   }
+
+  /* ================== Task#2 @media =================== */
+
+  @media (max-width: 1440px) {
+    .container{
+        width: 100%;
+    }
+    .hero {
+        width: 100%;       
+    }
+    .video {
+        width: 100%;
+    }
+    .video-player__img{
+        width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container{
+      max-width: 768px;
+  }
+  .hero {
+      height: 590px;
+      background-image: url('./assets/img/bg-mobile.jpg');
+  }
+  .hero-title {
+      padding-top: 80px;
+      padding-left: 60px;
+  }
+  .hero-title__h1 {    
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 64px;
+  }
+  .hero-title__p{
+    line-height: 24px;
+    max-width: 390px;
+    padding-top: 10px;
+  }
+  .hero-title__button{
+      margin-top: 60px;
+  }
+  .video{
+      /* display: none; */
+      width: 100%;
+  }
+  .video-player__img{
+      width: 100%;
+  }
+}
