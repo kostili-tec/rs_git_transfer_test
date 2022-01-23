@@ -1,6 +1,15 @@
-console.log("1.Вёрстка валидная +10(Ошибок нет)")
-console.log("2.Вёрстка семантическая +20(все элементы присутствуют)");
-console.log("3.Вёрстка соответствует макету +48(все секции есть)");
-console.log("4.Требования к css + 12(соблюдены)");
-console.log("5.Интерактивность, реализуемая через css +20(тоже есть)");
-console.log("\n Вроде я все пункты выполнил, поэтому считаю что оценка 100 баллов")
+(function(){
+    const burgItem = document.querySelector('.burger');
+    const menu = document.querySelector('.nav');
+    const menuClose = document.querySelector('.header__nav-close');
+    const navItem = document.querySelector('.nav');
+    burgItem.addEventListener('click', () => {
+        menu.classList.add('nav__active');
+    });
+    menuClose.addEventListener('click', () => {
+        menu.classList.remove('nav__active');
+    });
+    navItem.addEventListener('click', () => {
+        menu.classList.remove('nav__active');
+    })
+}());
