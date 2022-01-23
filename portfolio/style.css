@@ -308,7 +308,7 @@ body {
 /* ============= Video section ================ */
 
 .video{
-    padding-top: 100px;
+    padding-top: 75px;
 }
 .video-player{
     position: relative;
@@ -338,8 +338,10 @@ body {
 .price-items{
     display: flex;
     justify-content: center;
-    gap: 0 25px ;
+    gap: 25px 25px ;
     padding-top: 60px;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .price-item{
     height: 505px;
@@ -524,11 +526,22 @@ body {
     }
     .video {
         width: 100%;
+        height: auto;
     }
     .video-player__img{
         width: 100%;
+        height: auto;
+    }
+    .price{
+        width: 100%;
+        height: auto;
+        margin-bottom: 100px;
+    }
+    .contacts {
+        width: 100%;
+        height: auto;
+    }
 }
-
 @media (max-width: 768px) {
   .container{
       max-width: 768px;
@@ -654,11 +667,57 @@ body {
   .portfolio-button{
       margin: 2.5px;
   }
+  .portfolio-img{
+      /* width: 100%;
+      height: auto; */
+  }
+  .portfolio-img:last-child{
+      margin-bottom: 0;
+  }
   .video{
       /* display: none; */
       width: 100%;
+      padding-top: 100px;
+  }
+  .video-player{
+      width: 100%;
+      height: auto;
+      padding-top: 70px;
   }
   .video-player__img{
       width: 100%;
+      height: 418px;
+  }
+  .video-button {
+      height: 64px;
+      width: 64px;
+      background-size: 64px;
+  }
+  .price {
+    margin-bottom: 0;
+  }
+  .price-items{
+      gap: 50px 25px;
+      padding-top: 75px;
+  }
+  .price-item{
+      width: 420px;      
+  }
+  .contacts{
+      background-image: url(./assets/img/bg_contacts-mobile.jpg);
+      margin-top: 80px;
+      height: 600px;
+  }
+  .form-container{
+      align-items: center;
+      padding-top: 70px;
+    }
+  .contacts-form{
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+  }
+  .contacts-title{
+      padding-bottom: 51px;
   }
 }
