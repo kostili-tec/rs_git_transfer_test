@@ -25,10 +25,6 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;    
-    /* background-image: url('./assets/img/bg.jpg');
-    background-size: cover;
-    background-position: center 0;
-    background-repeat: no-repeat; */
     height: 90px;   
     margin-bottom: -90px; 
 }
@@ -517,9 +513,6 @@ body {
         width: 100%;
         height: auto;
     }
-    .portfolio-buttons{
-        /* width: calc(100% - 120px); */
-    }
     .portfolio-img__container{
         width: 100%;
         height: auto;
@@ -549,12 +542,10 @@ body {
   .nav {
       flex-direction: column;
       height: 100%;
-      /* width: 100%; */
       width: 620px;
       align-items: flex-start;
       position: fixed;
       top: 0;
-      /* left: 0; */
       right: 0;
       background-color: #000;
       z-index: 10;
@@ -584,9 +575,6 @@ body {
   }
   .header-container{
       padding: 0 64px 0 60px;
-  }
-  .header__logo{
-
   }
   .header__burger{
       display: block;
@@ -646,7 +634,6 @@ body {
     height: auto;
   }
   .skills-items{
-      /* justify-content: space-evenly; */
       gap: 23px;      
   }
   .skill-item{
@@ -659,23 +646,17 @@ body {
       padding-top: 125px;
   }
   .portfolio-buttons{
-      /* width: 600px; */
       flex-direction: row;
       flex-wrap: wrap;
-      margin: 70px 150px 40px 150px;
+      margin: 70px 100px 40px 100px;
   }
   .portfolio-button{
       margin: 2.5px;
   }
-  .portfolio-img{
-      /* width: 100%;
-      height: auto; */
-  }
   .portfolio-img:last-child{
       margin-bottom: 0;
   }
-  .video{
-      /* display: none; */
+  .video{    
       width: 100%;
       padding-top: 100px;
   }
@@ -728,9 +709,53 @@ body {
       flex-wrap: nowrap;
       align-items: center;
       padding: 10px 0;
-      /* padding-top: 10px; */
   }
-  .footer-links__rsschool{
-      margin-right: 0;
+  .footer-links__rsschool{      
+      margin: -10px 0 10px;      
   }
+}
+
+@media (max-width: 750px){
+    .video-player__img{
+        height: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .header-container{
+        padding: 0 20px 0 20px;
+    }
+    .header__burger, .header__nav-close{
+        margin-right: 20px;
+    }
+    .nav {
+        width: 100%;
+    }
+    .hero {
+        background-position: -280px 0px;
+    }
+    .hero-title{
+        padding-left: 20px;
+    }
+    .portfolio-buttons{
+        margin: 70px 0;
+    }
+    .portfolio-img{
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+    .video-player__img{
+        height: auto;
+    }
+    .contacts{
+        background-position: -90px 0px;
+    }
+    .contacts-form{
+        width: 100%;
+    }
+    .contacts-input{
+        width: auto;
+        min-width: 290px;
+    }    
 }
