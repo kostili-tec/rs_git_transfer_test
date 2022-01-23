@@ -720,4 +720,17 @@ body {
   .contacts-title{
       padding-bottom: 51px;
   }
+  .footer{
+      height: 190px;
+  }
+  .footer-links__container{
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      padding: 10px 0;
+      /* padding-top: 10px; */
+  }
+  .footer-links__rsschool{
+      margin-right: 0;
+  }
 }
