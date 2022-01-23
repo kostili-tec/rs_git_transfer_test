@@ -82,7 +82,7 @@ body {
     display: flex;
     font-weight: bold;
     line-height: 50px;
-    padding-right: 135px;
+    /* padding-right: 135px; */
 }
 .nav-lang-item{
     font-family: Inter;
@@ -300,7 +300,10 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 25px 0;
+    /* gap: 25px 0; */
+}
+.portfolio-img{
+    margin: 12.5px;
 }
 /* ============= Video section ================ */
 
@@ -491,12 +494,33 @@ body {
 
   /* ================== Task#2 @media =================== */
 
-  @media (max-width: 1440px) {
+@media (max-width: 1440px) {
+    .main {
+        width: 100%;
+    }
     .container{
         width: 100%;
     }
     .hero {
         width: 100%;       
+    }
+    .skills{
+        width: 100%;
+        height: auto;
+    }
+    .skills-items {
+        justify-content: center;
+    }
+    .portfolio{
+        width: 100%;
+        height: auto;
+    }
+    .portfolio-buttons{
+        /* width: calc(100% - 120px); */
+    }
+    .portfolio-img__container{
+        width: 100%;
+        height: auto;
     }
     .video {
         width: 100%;
@@ -543,6 +567,7 @@ body {
   .nav-lang{
       position: absolute;
       right: 0;
+      padding-right: 135px;
   }
   .header-container{
       padding: 0 64px 0 60px;
@@ -605,11 +630,11 @@ body {
     line-height: 40px;
   }
   .skills{
-    height: 729px;
+    height: auto;
   }
   .skills-items{
-      justify-content: space-evenly;
-      gap: 25px 0;      
+      /* justify-content: space-evenly; */
+      gap: 23px;      
   }
   .skill-item{
     padding-top: 95px;
@@ -617,11 +642,14 @@ body {
   .skill-p{
     line-height: 22px;
   }
+  .portfolio{
+      padding-top: 125px;
+  }
   .portfolio-buttons{
       /* width: 600px; */
       flex-direction: row;
       flex-wrap: wrap;
-      margin: 70px 150px 55px 150px;
+      margin: 70px 150px 40px 150px;
   }
   .portfolio-button{
       margin: 2.5px;
