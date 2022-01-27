@@ -168,6 +168,7 @@ body {
     color: #000;
 }
 .button:hover {
+    color: #fff;
     background-color: #8E856D;
     transition: 0.3s linear;
 }
@@ -283,14 +284,19 @@ body {
     background-color: #000;
     border: 2px solid #BDAE82;
 }
-.portfolio-button:last-child{
+/* .portfolio-button:last-child{
     color:#000;
     background-color: #BDAE82;
     border: 0;
 }
 .portfolio-button:last-child:hover{
+    color:#fff;
     background-color: #8E856D;
     transition: 0.3s linear;
+} */
+.portfolio-button.active{
+    color: #000;
+    background-color: #bdae82;
 }
 .portfolio-img__container{
     display: flex;
@@ -321,6 +327,14 @@ body {
     border: none;
     height: 130px;
     width: 130px;
+}
+.video-button:hover{
+    transition: 0.3s linear;
+    fill: #BDAE82;
+}
+.play_button {
+    height: auto;
+    width: 100%;
 }
 .video-player__img{
     height: 705px;
@@ -521,6 +535,14 @@ body {
         width: 100%;
         height: auto;
     }
+    /* .video-button{
+        width: 130px;
+        height: 130px;
+    } */
+    /* .play_button {
+        width: 130px;
+        height: 130px;
+    } */
     .video-player__img{
         width: 100%;
         height: auto;

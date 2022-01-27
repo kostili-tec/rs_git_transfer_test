@@ -101,10 +101,10 @@
                     <h2 class="section-title">Portfolio</h2>
                 </div>
                 <div class="portfolio-buttons">
-                    <button class="button portfolio-button">Winter</button>
-                    <button class="button portfolio-button">Spring</button>
-                    <button class="button portfolio-button">Summer</button>
-                    <button class="button portfolio-button">Autumn</button>
+                    <button class="button portfolio-button" data-season="winter">Winter</button>
+                    <button class="button portfolio-button" data-season="spring">Spring</button>
+                    <button class="button portfolio-button" data-season="summer">Summer</button>
+                    <button class="button portfolio-button active" data-season="autumn">Autumn</button>
                 </div>
                 <div class="portfolio-img__container">
                     <img class="portfolio-img" src="./assets/img/portfolio-img.jpg" alt="portfolio image">
@@ -120,7 +120,11 @@
                     <h2 class="section-title">Video</h2>
                 </div>
                 <div class="video-player">
-                    <button class="video-button"></button>
+                    <button class="video-button">
+                        <!-- <svg class="play_button">
+                            <use xlink:href="./assets/svg/sprite.svg#play_button"></use>
+                          </svg> -->
+                    </button>
                     <img src="./assets/img/video-player.jpg" alt="" class="video-player__img">
                 </div>
             </section>
