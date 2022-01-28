@@ -88,11 +88,18 @@ body {
     line-height: 50px;
     margin-right: 9px;
 }
-.nav-lang-item:first-child{
+.nav-lang-item.active-lang{
     color: #BDAE82;
 }
+/* .nav-lang-item:first-child{
+    color: #BDAE82;
+} */
 .nav-lang-item:last-child{
     margin-right: 0;
+}
+.nav-lang-item:first-child:hover, 
+.nav-lang-item:last-child:hover{
+    cursor: pointer;
 }
 
 .header__burger {

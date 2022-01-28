@@ -1,3 +1,5 @@
+import i18Obj from "./translate.js";
+
 (function(){
     const burgItem = document.querySelector('.burger');
     const menu = document.querySelector('.nav');
@@ -14,7 +16,8 @@
     })
 }());
 
-const btnWinter = document.querySelector('.winter-button');
+const langButton = document.querySelector('.nav-lang');
+const navLangItem = document.querySelectorAll('.nav-lang-item'); 
 const portfolioBtns = document.querySelector('.portfolio-buttons'); // div buttons-container
 const portfolioBtn = document.querySelectorAll('.portfolio-button');
 const portfolioImages = document.querySelectorAll('.portfolio-img');
@@ -25,30 +28,21 @@ function changeImage(event) {
     }
 }
 
-function changeClassActive(element){
+function changeClassActive(element, activeClass){
     element.forEach(item => {
-        item.classList.remove('active');
+        item.classList.remove(activeClass);
     });
-    this.event.target.classList.add('active');
-    
-    
+    event.target.classList.add(activeClass);
 }
-
-// btnWinter.addEventListener('click', () => {
-//     portfolioImages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`)
-// })
 
 portfolioBtns.addEventListener('click', event => {
     if(event.target.classList.contains('portfolio-button')) {
         let nameButton = event.target.dataset.season;
         portfolioImages.forEach((img, index) => img.src = `./assets/img/${nameButton}/${index + 1}.jpg`)
         console.log(nameButton);
-        changeClassActive(portfolioBtn);        
+        changeClassActive(portfolioBtn, 'active');        
     }    
-})
-
-
-import i18Obj from "./translate.js";
+});
 
 function getTranslate(lang) {
     const getData = document.querySelectorAll('[data-i18n]'); 
@@ -57,12 +51,13 @@ function getTranslate(lang) {
     })
 }
 
-
-const langButton = document.querySelector('.nav-lang');
 langButton.addEventListener('click', event => {
     let nameLang = event.target.dataset.language;
+    if (nameLang) {
     getTranslate(nameLang);
+    changeClassActive(navLangItem, 'active-lang');
     console.log(nameLang);
+    }
 })
 
 
