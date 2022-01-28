@@ -48,3 +48,22 @@ portfolioBtns.addEventListener('click', event => {
 })
 
 
+import i18Obj from "./translate.js";
+
+function getTranslate(lang) {
+    const getData = document.querySelectorAll('[data-i18n]'); 
+    getData.forEach((el) => {
+        el.textContent = i18Obj[lang][el.dataset.i18n];
+    })
+}
+
+
+const langButton = document.querySelector('.nav-lang');
+langButton.addEventListener('click', event => {
+    let nameLang = event.target.dataset.language;
+    getTranslate(nameLang);
+    console.log(nameLang);
+})
+
+
+
