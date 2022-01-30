@@ -18,9 +18,13 @@ import i18Obj from "./translate.js";
 
 const langButton = document.querySelector('.nav-lang');
 const navLangItem = document.querySelectorAll('.nav-lang-item'); 
+const themeButton = document.querySelector('.theme-button');
+const svgTheme = document.querySelector('.theme-icon');
 const portfolioBtns = document.querySelector('.portfolio-buttons'); // div buttons-container
 const portfolioBtn = document.querySelectorAll('.portfolio-button');
 const portfolioImages = document.querySelectorAll('.portfolio-img');
+
+const arrSelectror = ['body', '.section-title',  '.skills', '.portfolio', '.video', '.price'];
 
 function changeImage(event) {
     if (event.target.classList.contains('portfolio-button')) {
@@ -51,6 +55,17 @@ function getTranslate(lang) {
     })
 }
 
+function changeTheme(arr) {
+    arr.forEach(item => {
+        const selector = document.querySelectorAll(`${item}`);
+            selector.forEach(cssClass =>{
+                cssClass.classList.toggle('light_theme')
+            })
+        // console.log(selector);
+        //     selector.classList.toggle('light_theme');
+    })
+};
+
 langButton.addEventListener('click', event => {
     let nameLang = event.target.dataset.language;
     if (nameLang) {
@@ -60,5 +75,21 @@ langButton.addEventListener('click', event => {
     }
 })
 
+themeButton.addEventListener('click', event => {
+    if(themeButton.classList.contains('dark-theme')){
+        svgTheme.childNodes[1].setAttribute('href', './assets/svg/sprite.svg#sun_light');
+        themeButton.classList.remove('dark-theme');
+        themeButton.classList.add('light-theme');
+        changeTheme(arrSelectror);
+    } else if(themeButton.classList.contains('light-theme')){
+        svgTheme.childNodes[1].setAttribute('href', './assets/svg/sprite.svg#moon_shine');
+        themeButton.classList.remove('light-theme');
+        themeButton.classList.add('dark-theme');
+        changeTheme(arrSelectror);
+    }
+})
 
 
+
+
+    
