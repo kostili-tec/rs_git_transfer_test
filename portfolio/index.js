@@ -26,11 +26,7 @@ const portfolioImages = document.querySelectorAll('.portfolio-img');
 
 const arrSelectror = ['body', '.section-title',  '.skills', '.portfolio', '.video', '.price'];
 
-function changeImage(event) {
-    if (event.target.classList.contains('portfolio-button')) {
-        console.log(event.target)
-    }
-}
+
 
 function changeClassActive(element, activeClass){
     element.forEach(item => {
@@ -42,8 +38,7 @@ function changeClassActive(element, activeClass){
 portfolioBtns.addEventListener('click', event => {
     if(event.target.classList.contains('portfolio-button')) {
         let nameButton = event.target.dataset.season;
-        portfolioImages.forEach((img, index) => img.src = `./assets/img/${nameButton}/${index + 1}.jpg`)
-        console.log(nameButton);
+        portfolioImages.forEach((img, index) => img.src = `./assets/img/${nameButton}/${index + 1}.jpg`);        
         changeClassActive(portfolioBtn, 'active');        
     }    
 });
@@ -58,11 +53,7 @@ function getTranslate(lang) {
 function changeTheme(arr) {
     arr.forEach(item => {
         const selector = document.querySelectorAll(`${item}`);
-            selector.forEach(cssClass =>{
-                cssClass.classList.toggle('light_theme')
-            })
-        // console.log(selector);
-        //     selector.classList.toggle('light_theme');
+            selector.forEach(cssClass => cssClass.classList.toggle('light_theme'));     
     })
 };
 
@@ -70,8 +61,7 @@ langButton.addEventListener('click', event => {
     let nameLang = event.target.dataset.language;
     if (nameLang) {
     getTranslate(nameLang);
-    changeClassActive(navLangItem, 'active-lang');
-    console.log(nameLang);
+    changeClassActive(navLangItem, 'active-lang');    
     }
 })
 

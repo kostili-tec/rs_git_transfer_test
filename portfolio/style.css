@@ -1,5 +1,6 @@
 :root {
     --gold: #bdae82;
+    --gold-section-line: #bdae82;
     --black: #000;
     --black-bg: #000;
     --black-nav-bg: #000;
@@ -82,7 +83,7 @@ body {
     text-decoration: none;    
 }
 .nav-link:hover{
-    color: #BDAE82;
+    color: var(--gold);
     transition: 0.3s linear;
 }
 .nav-lang{
@@ -108,8 +109,8 @@ body {
 .nav-lang-item:last-child{
     margin-right: 0;
 }
-.nav-lang-item:first-child:hover, 
-.nav-lang-item:last-child:hover{
+.nav-lang-item:first-of-type:hover, 
+.nav-lang-item:last-of-type:hover{
     color:rgba(255, 255, 255, 0.568);
     cursor: pointer;
 }
@@ -228,9 +229,7 @@ body {
     font-weight: bold;
     font-size: 40px;
     line-height: 80px;
-    color: #BDAE82;   
-    
-    
+    color: #BDAE82;  
 }
 .line-title{
     display: flex;   
@@ -249,7 +248,7 @@ body {
     width: 400px;
     top: 50%;
     left: 120%;
-    background-color: #BDAE82;
+    background-color: var(--gold-section-line);
 }
 .section-title::after {
     content: "";
@@ -259,7 +258,7 @@ body {
     width: 400px;
     top: 50%;
     right: 120%;  
-    background-color: #BDAE82;
+    background-color: var(--gold-section-line);
 }
 .skills-items{
     display: flex;
@@ -317,7 +316,7 @@ body {
 }
 .portfolio-button{
     margin: 60px 2.5px;
-    color: #BDAE82;
+    color: var(--gold-section-line);
     background-color: transparent;
     border: 2px solid #BDAE82;
 }
@@ -335,6 +334,12 @@ body {
     color: #000;
     background-color: #bdae82;
 }
+.portfolio-button.active:hover{
+    color: #fff;
+    background-color: #8E856D;
+    transition: 0.3s linear;
+}
+
 .portfolio-img__container{
     display: flex;
     justify-content: space-around;
@@ -449,10 +454,15 @@ body {
     
 }
 .contacts-title{
-    position: unset;    
+    display: flex;        
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 80px;
+    color: #BDAE82;   
+    /* position: unset;    
     justify-content: unset;
     left: 0;
-    padding-bottom: 40px;
+    padding-bottom: 40px; */
 }
 .contacts-title::after{
     content: none;
@@ -486,8 +496,10 @@ body {
 .footer {
     height: 150px;
     width: auto;
-    background-color: #000;
-    color: #fff;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--black-bg);
+    color: var(--white-text);
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
@@ -833,6 +845,7 @@ body {
     .light_theme{
         background-color: #fff;
         color: #000;
+        --gold-section-line: #000;
     }
     @media(max-width: 768px) {
         .light_theme{
