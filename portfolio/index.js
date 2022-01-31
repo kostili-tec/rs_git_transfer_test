@@ -26,7 +26,35 @@ const portfolioImages = document.querySelectorAll('.portfolio-img');
 
 const arrSelectror = ['body', '.section-title',  '.skills', '.portfolio', '.video', '.price'];
 
+let lang = 'en', theme = 'dark';
+console.log(lang);
 
+function setLocalStorage() {    
+    localStorage.setItem('lang', lang);
+  }
+window.addEventListener('beforeunload', setLocalStorage);
+
+function getLocalStorage() {
+    if(localStorage.getItem('lang')) {
+        const langGet = localStorage.getItem('lang');
+        getTranslate(langGet);
+        lang = langGet;
+    }
+}
+window.addEventListener('load', getLocalStorage);
+window.addEventListener('load',  () => {
+    if (lang == 'en') {
+        navLangItem[2].classList.remove('active-lang');
+        navLangItem[0].classList.add('active-lang');        
+    }if (lang == 'ru'){        
+        navLangItem[0].classList.remove('active-lang');
+        navLangItem[2].classList.add('active-lang');
+    } else {
+        navLangItem[0].classList.add('active-lang');
+        lang = 'en';
+    }
+});
+window.addEventListener('load', getTranslate(lang));
 
 function changeClassActive(element, activeClass){
     element.forEach(item => {
@@ -43,10 +71,10 @@ portfolioBtns.addEventListener('click', event => {
     }    
 });
 
-function getTranslate(lang) {
+function getTranslate(language) {
     const getData = document.querySelectorAll('[data-i18n]'); 
     getData.forEach((el) => {
-        el.textContent = i18Obj[lang][el.dataset.i18n];
+        el.textContent = i18Obj[language][el.dataset.i18n];
     })
 }
 
@@ -60,8 +88,10 @@ function changeTheme(arr) {
 langButton.addEventListener('click', event => {
     let nameLang = event.target.dataset.language;
     if (nameLang) {
-    getTranslate(nameLang);
-    changeClassActive(navLangItem, 'active-lang');    
+        getTranslate(nameLang);
+        changeClassActive(navLangItem, 'active-lang');    
+        lang = nameLang;
+        console.log(navLangItem[0]);
     }
 })
 

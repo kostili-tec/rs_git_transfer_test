@@ -793,15 +793,18 @@ body {
     }
 }
 
+@media (max-width: 600px) {
+    .nav {
+        width: 100%;
+    }
+}
+
 @media (max-width: 425px) {
     .header-container{
         padding: 0 20px 0 20px;
     }
     .header__burger, .header__nav-close{
         margin-right: 20px;
-    }
-    .nav {
-        width: 100%;
     }
     .nav-lang{        
         padding-right: 100px;
