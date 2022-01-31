@@ -1,3 +1,14 @@
+:root {
+    --gold: #bdae82;
+    --gold-section-line: #bdae82;
+    --black: #000;
+    --black-bg: #000;
+    --black-nav-bg: #000;
+    --white: #fff;
+    --white-bg: #fff;
+    --white-text: #fff;
+    --white-nav-text: #fff;
+}
 html{
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -9,13 +20,13 @@ body {
     font-family: 'Inter', sans-serif;
     font-family: 'Merriweather', serif;
     color: #fff;
-     background-color: #000; 
+    background-color: #000; 
 }
 .container {    
     width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
-    background-color: #000;
+    /* background-color: #000; */
   } 
 
   /* ============= HEADER ============ */
@@ -27,6 +38,7 @@ body {
     justify-content: space-between;    
     height: 90px;   
     margin-bottom: -90px; 
+    color:  #fff;
 }
 .header-icon{
     height: 50px;
@@ -67,11 +79,11 @@ body {
     font-weight: normal;
     font-size: 20px;
     line-height: 50px;
-    color: white;
+    color: var(--white-nav-text);
     text-decoration: none;    
 }
 .nav-link:hover{
-    color: #BDAE82;
+    color: var(--gold);
     transition: 0.3s linear;
 }
 .nav-lang{
@@ -88,11 +100,36 @@ body {
     line-height: 50px;
     margin-right: 9px;
 }
-.nav-lang-item:first-child{
+.nav-lang-item.active-lang{
     color: #BDAE82;
 }
+/* .nav-lang-item:first-child{
+    color: #BDAE82;
+} */
 .nav-lang-item:last-child{
     margin-right: 0;
+}
+.nav-lang-item:first-of-type:hover, 
+.nav-lang-item:last-of-type:hover{
+    color:rgba(255, 255, 255, 0.568);
+    cursor: pointer;
+}
+
+.theme-button{
+    border: none;
+    background-color: transparent;
+    height: auto;
+    width: 100%;
+    padding: 0 20px;
+}
+.theme-icon{
+    height: 40px;
+    width: 40px;
+    fill: #fff;
+}
+.theme-icon:hover{
+    transition: 0.3s linear;
+    fill: #BDAE82;
 }
 
 .header__burger {
@@ -131,6 +168,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: #fff;
 }
 .hero-title{
     padding-top: 250px;
@@ -168,6 +206,7 @@ body {
     color: #000;
 }
 .button:hover {
+    color: #fff;
     background-color: #8E856D;
     transition: 0.3s linear;
 }
@@ -190,9 +229,7 @@ body {
     font-weight: bold;
     font-size: 40px;
     line-height: 80px;
-    color: #BDAE82;   
-    
-    
+    color: #BDAE82;  
 }
 .line-title{
     display: flex;   
@@ -211,7 +248,7 @@ body {
     width: 400px;
     top: 50%;
     left: 120%;
-    background-color: #BDAE82;
+    background-color: var(--gold-section-line);
 }
 .section-title::after {
     content: "";
@@ -221,7 +258,7 @@ body {
     width: 400px;
     top: 50%;
     right: 120%;  
-    background-color: #BDAE82;
+    background-color: var(--gold-section-line);
 }
 .skills-items{
     display: flex;
@@ -279,19 +316,30 @@ body {
 }
 .portfolio-button{
     margin: 60px 2.5px;
-    color: #BDAE82;
-    background-color: #000;
+    color: var(--gold-section-line);
+    background-color: transparent;
     border: 2px solid #BDAE82;
 }
-.portfolio-button:last-child{
+/* .portfolio-button:last-child{
     color:#000;
     background-color: #BDAE82;
     border: 0;
 }
 .portfolio-button:last-child:hover{
+    color:#fff;
+    background-color: #8E856D;
+    transition: 0.3s linear;
+} */
+.portfolio-button.active{
+    color: #000;
+    background-color: #bdae82;
+}
+.portfolio-button.active:hover{
+    color: #fff;
     background-color: #8E856D;
     transition: 0.3s linear;
 }
+
 .portfolio-img__container{
     display: flex;
     justify-content: space-around;
@@ -321,6 +369,14 @@ body {
     border: none;
     height: 130px;
     width: 130px;
+}
+.video-button:hover{
+    transition: 0.3s linear;
+    fill: #BDAE82;
+}
+.play_button {
+    height: auto;
+    width: 100%;
 }
 .video-player__img{
     height: 705px;
@@ -398,10 +454,15 @@ body {
     
 }
 .contacts-title{
-    position: unset;    
+    display: flex;        
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 80px;
+    color: #BDAE82;   
+    /* position: unset;    
     justify-content: unset;
     left: 0;
-    padding-bottom: 40px;
+    padding-bottom: 40px; */
 }
 .contacts-title::after{
     content: none;
@@ -435,7 +496,10 @@ body {
 .footer {
     height: 150px;
     width: auto;
-    /* background-color: #000; */
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--black-bg);
+    color: var(--white-text);
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
@@ -521,6 +585,14 @@ body {
         width: 100%;
         height: auto;
     }
+    /* .video-button{
+        width: 130px;
+        height: 130px;
+    } */
+    /* .play_button {
+        width: 130px;
+        height: 130px;
+    } */
     .video-player__img{
         width: 100%;
         height: auto;
@@ -547,7 +619,7 @@ body {
       position: fixed;
       top: 0;
       right: 0;
-      background-color: #000;
+      background-color: var(--black-nav-bg);
       z-index: 10;
       padding-left: 127px;
       padding-top: 134px;
@@ -595,7 +667,7 @@ body {
       display: block;
       width: 100%;
       height: 2px;
-      background-color: #fff;
+      background-color: var(--white-nav-text);
       position: absolute;
       top: 50%;
   }
@@ -721,6 +793,12 @@ body {
     }
 }
 
+@media (max-width: 600px) {
+    .nav {
+        width: 100%;
+    }
+}
+
 @media (max-width: 425px) {
     .header-container{
         padding: 0 20px 0 20px;
@@ -728,8 +806,8 @@ body {
     .header__burger, .header__nav-close{
         margin-right: 20px;
     }
-    .nav {
-        width: 100%;
+    .nav-lang{        
+        padding-right: 100px;
     }
     .hero {
         background-position: -280px 0px;
@@ -757,5 +835,24 @@ body {
     .contacts-input{
         width: auto;
         min-width: 290px;
-    }    
+    } 
+    @media (max-width: 320px) {
+        .nav-lang{
+            padding-right: 70px;
+        }
+    } 
 }
+/* =============== Light theme =============== */
+
+
+    .light_theme{
+        background-color: #fff;
+        color: #000;
+        --gold-section-line: #000;
+    }
+    @media(max-width: 768px) {
+        .light_theme{
+            --white-nav-text: #000;
+            --black-nav-bg: #fff;
+        }
+    }
