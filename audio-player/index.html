@@ -5,37 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Music Player</title>
+    <title>Synth Player</title>
 </head>
 <body>
-    <!-- <audio src="./assets/audio/death.mp3"></audio> -->
-    <button class="play-btn">Play</button>
-    <button class="stop-btn">Stop</button>
-
-    <div class="audio-player">
-        <div class="timeline">
-            <div class="progress"></div>
-        </div>
-        <div class="controls">
-            <div class="play-container">
-                <div class="play toggle-play"></div>
+    <div class="container">
+        <div class="audio-player">
+            <div class="album-cover">
+                <img src="./assets/covers/power_glove-playback.jpg" alt="" class="album-cover__img">
             </div>
-            <div class="time">
-                <div class="current">0:00</div>
-                <div class="divider">/</div>
-                <div class="length"></div>
-            </div>
-            <div class="song-name">Song</div>
-            <div class="volume-container">
-                <div class="volume-button">
-                    <div class="volume">
-                        
+            <div class="controls">
+                <div class="buttons-container">
+                    <button class="controls-btn backward-btn">
+                        <svg class="icon">
+                            <use xlink:href="./assets/svg/sprite.svg#media-previous"></use>
+                          </svg>
+                    </button>
+                    <button class="controls-btn play-btn">
+                        <svg class="icon">
+                            <use xlink:href="./assets/svg/sprite.svg#media-play"></use>
+                          </svg>
+                    </button>
+                    <button class="controls-btn forward-btn">
+                        <svg class="icon">
+                            <use xlink:href="./assets/svg/sprite.svg#media-next"></use>
+                          </svg>
+                    </button>
+                    <button class="controls-btn list-btn">
+                        <svg class="icon">
+                            <use xlink:href="./assets/svg/sprite.svg#menu"></use>
+                          </svg>
+                    </button>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
                     </div>
                 </div>
-            </div>    
+                <div class="time">
+                    <p class="current-time">0:00</p>
+                    <p class="full-length">0:00</p>
+                </div>
+            </div>
         </div>
     </div>
+
     
     <script src="./js/script.js"></script>
 </body>
 </html>
+
+
+<!-- <svg class="icon">
+    <use xlink:href="#volume-off"></use>
+  </svg><svg class="icon">
+    <use xlink:href="#media-next"></use>
+  </svg><svg class="icon">
+    <use xlink:href="#media-pause"></use>
+  </svg><svg class="icon">
+    <use xlink:href="#media-play"></use>
+  </svg><svg class="icon">
+    <use xlink:href="#media-previous"></use>
+  </svg><svg class="icon">
+    <use xlink:href="#menu"></use>
+  </svg><svg class="icon">
+    <use xlink:href="#volume-full"></use>
+  </svg> -->
