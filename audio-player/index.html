@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <title>Synth Player</title>
 </head>
 <body>
@@ -14,6 +15,9 @@
                 <img src="./assets/covers/power_glove-playback.jpg" alt="" class="album-cover__img">
             </div>
             <div class="controls">
+                <div class="song-name">
+                    <h1 class="song-name__h1">Power Glove - Loaded</h1>
+                </div>
                 <div class="buttons-container">
                     <button class="controls-btn backward-btn">
                         <svg class="icon">
@@ -21,8 +25,13 @@
                           </svg>
                     </button>
                     <button class="controls-btn play-btn">
-                        <svg class="icon">
+                        <svg class="icon icon-play">
                             <use xlink:href="./assets/svg/sprite.svg#media-play"></use>
+                          </svg>
+                    </button>
+                    <button class="controls-btn pause-btn">
+                        <svg class="icon">
+                            <use xlink:href="./assets/svg/sprite.svg#media-pause"></use>
                           </svg>
                     </button>
                     <button class="controls-btn forward-btn">
@@ -32,20 +41,27 @@
                     </button>
                     <button class="controls-btn list-btn">
                         <svg class="icon">
-                            <use xlink:href="./assets/svg/sprite.svg#menu"></use>
+                            <use xlink:href="./assets/svg/sprite.svg#volume-full"></use>
                           </svg>
                     </button>
                 </div>
                 <div class="progress-container">
+                    <div class="time">
+                        <p class="current-time">0:00</p>                        
+                    </div>
+                    <!-- <audio src="../audio-player/assets/audio/loaded.mp3"></audio> -->
                     <div class="progress-bar">
                         <div class="progress"></div>
                     </div>
+                    <div class="time">
+                        <p class="full-length">0:00</p>
+                    </div>                        
                 </div>
-                <div class="time">
+                <!-- <div class="time">
                     <p class="current-time">0:00</p>
                     <p class="full-length">0:00</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

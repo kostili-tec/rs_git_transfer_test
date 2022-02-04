@@ -19,6 +19,7 @@ body {
 
 .container {
     display: flex;
+    /* flex-grow: 1; */
     position: relative;
     border-radius: 1em;
     border: 2px solid var(--purple-box);
@@ -28,16 +29,18 @@ body {
 }
 
 .audio-player{
-    width: 700px;
-    height: 50vh;
+    width: 1000px;
+    height: 30vh;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    
 }
 .album-cover {
-    width: 50%;
+    /* width: 50%; */
     height: auto;
     display: flex;
+    flex-grow: 2;
     align-items: center;
     justify-content: center;
     border-right: 1px solid var(--purple-box);
@@ -48,32 +51,76 @@ body {
     /* border-radius: 3%; */
 }
 .album-cover__img{
-    width: 75%;
-    height: 75%;
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    max-height: 75%;
+}
+
+.song-name{
+    display: flex;
+    justify-content: center;
 }
 
 .controls{
-    width: 50%;
+    /* width: 50%; */
     height: auto;
     display: flex;
+    flex-grow: 9;
+    flex-direction: column;
     border-left: 1px solid var(--purple-box);
     box-shadow: 0 0 .5em var(--purple-box);
+    
 }
 .buttons-container{
     width: 100%;
     height: 75px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 .controls-btn{
     background: transparent;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid #fff;
+    border-radius: 0.3em;
+    box-shadow: 0 0 .2em #fff,
+                inset 0 0 .2em #fff;
+    cursor: pointer;
+    outline: none;
     /* border: none; */
 }
 .icon{
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     fill: #fff;
+    
+}
+
+.progress-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.progress-bar{
+    width: 80%;
+    height: 5px;
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.progress{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--purple-box);
+    border-radius: 10px;
+    transition: width 150ms ease-in-out;
 }
