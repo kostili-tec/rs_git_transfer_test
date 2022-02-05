@@ -14,6 +14,7 @@ const audioFullLength = document.querySelector('.full-length');
 const audio = new Audio();
 let isPlay = false;
 
+
 const songs = [
     {
         index: 0,
@@ -140,3 +141,40 @@ function fillProgress(e) {
 function updateProgress(e) {
     audio.currentTime = (e.offsetX / this.clientWidth) * audio.duration;
 }
+
+    let tickName = songName.textContent.split('');
+    tickName.push('  ');
+     
+    let indexStart = 1, indexTicker;
+
+function tickerName() {
+    indexTicker = indexStart;
+    let tickChange = [];
+    // console.log(tickOut);
+    for(let i = 0; i < tickName.length - 1; i++) {
+        tickChange[i] = tickName[indexTicker];
+        indexTicker++;
+        if(indexTicker >= tickName.length) {
+            indexTicker = 0;
+        }
+    }
+    indexTicker = indexStart;
+    let tickEnd = tickChange.join('');
+    console.log(indexTicker);
+    console.log(tickEnd);
+    songName.textContent = tickEnd;
+    if(indexStart >= tickName.length){
+        indexStart = 0;
+    } else {
+        indexStart++;
+    }
+  
+   
+    
+}
+
+//    setInterval(tickerName, 2000);
+
+
+// // остановить вывод через 5 секунд
+// setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
