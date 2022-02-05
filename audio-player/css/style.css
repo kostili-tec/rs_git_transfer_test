@@ -41,6 +41,7 @@ body {
     height: auto;
     display: flex;
     flex-grow: 2;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     border-right: 1px solid var(--purple-box);
