@@ -45,6 +45,8 @@ const songs = [
 ]
 
 let current = 0;
+let indexStart = 0, indexTicker;
+let tickName; // for getName
 audio.src = songs[current].audioSrs;
 
 // =============>>> EVENTS <<<============= //
@@ -105,13 +107,15 @@ function playNextOrBack(){
         current = 0;
     } else if (current < 0) {
         current = songs.length - 1;
-    }   
+    }      
     songName.textContent = songs[current].name;
+    if (songName.textContent.length > 21) {
+        songName.textContent = `${songs[current].name.substring(0, 22)}...`;
+    }
     audio.srs = songs[current].audioSrs;
     coverImg.src = songs[current].coverImg;    
-    playAudio();   
-    
-    // console.log(audio.srs);
+    indexStart = 0;
+    playAudio();       
 }
 
 function fillProgress(e) {
@@ -142,15 +146,22 @@ function updateProgress(e) {
     audio.currentTime = (e.offsetX / this.clientWidth) * audio.duration;
 }
 
-    let tickName = songName.textContent.split('');
-    tickName.push('  ');
-     
-    let indexStart = 1, indexTicker;
+function getName(){
+    tickName = songs[current].name.split('');
+    tickName.push(' ');
+}
+function cutPushName(songNameCut){
+    if (songNameCut.length >= 21) {
+        songNameCut = `${songNameCut.substring(0, 22)}...`;       
+        console.log(songNameCut);
+        return songNameCut;
+    } else return songNameCut;
+}    
 
 function tickerName() {
+    getName();
     indexTicker = indexStart;
-    let tickChange = [];
-    // console.log(tickOut);
+    let tickChange = [];    
     for(let i = 0; i < tickName.length - 1; i++) {
         tickChange[i] = tickName[indexTicker];
         indexTicker++;
@@ -160,20 +171,18 @@ function tickerName() {
     }
     indexTicker = indexStart;
     let tickEnd = tickChange.join('');
-    console.log(indexTicker);
-    console.log(tickEnd);
-    songName.textContent = tickEnd;
+        console.log(indexTicker);
+        console.log(tickEnd);    
+    songName.textContent = cutPushName(tickEnd);   
+    
     if(indexStart >= tickName.length){
         indexStart = 0;
     } else {
         indexStart++;
-    }
-  
-   
-    
+    }  
 }
 
-//    setInterval(tickerName, 2000);
+    setInterval(tickerName, 2000);
 
 
 // // остановить вывод через 5 секунд

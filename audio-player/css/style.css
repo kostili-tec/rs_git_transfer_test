@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Press Start 2P', cursive;
     color: #fff;
 }
 :root {
@@ -61,10 +62,16 @@ body {
 .song-name{
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
+}
+.song-name__h1 {
+    font-size: 1.5em;
+    position: absolute;
 }
 
 .controls{
     /* width: 50%; */
+    padding-top: 30px;
     height: auto;
     display: flex;
     flex-grow: 9;
@@ -73,6 +80,8 @@ body {
     box-shadow: 0 0 .5em var(--purple-box);
     
 }
+
+
 .buttons-container{
     width: 100%;
     height: 75px;
@@ -107,7 +116,7 @@ body {
     justify-content: center;
 }
 .progress-bar{
-    width: 80%;
+    width: 69%;
     height: 5px;
     margin: 0 10px;
     background-color: #fff;
