@@ -105,8 +105,28 @@ body {
 .icon{
     width: 2rem;
     height: 2rem;
-    fill: #fff;
-    
+    fill: #fff;     
+    position: relative;
+}
+.volume-btn{
+    position: relative;    
+}
+.volume-slider{
+    position: absolute; 
+    left: 3rem;   
+    height: 2rem;
+    width: 0;
+    background-color: rgba(255, 255, 255, 0.295);
+    box-shadow: 0 0 .5em var(--purple-box);
+    transition: 0.25s; 
+}
+.volume-slider__progress{    
+    height: 2rem;
+    width: 50%;
+    background-color: var(--purple-box);
+}
+.volume-btn:hover .volume-slider{   
+    width: 100px;
 }
 
 .progress-container{

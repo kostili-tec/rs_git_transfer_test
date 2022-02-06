@@ -6,6 +6,8 @@ const pauseBtn = document.querySelector('.stop-btn');
 const prevBtn = document.querySelector('.backward-btn');
 const nextBtn = document.querySelector('.forward-btn');
 const volumeBtn = document.querySelector('.volume-btn');
+const volumeSlider = document.querySelector('.volume-slider');
+const volumeSliderProgress = document.querySelector('.volume-slider__progress');
 const playSvg = document.querySelector('.icon-play');
 const progressBar = document.querySelector('.progress-bar');
 const progress = document.querySelector('.progress');
@@ -56,9 +58,7 @@ progressBar.addEventListener('click', updateProgress);
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 audio.addEventListener('ended', nextSong);
-
-
-// console.log(playSvg.innerHTML);
+volumeSlider.addEventListener('click', changeVolume);
 
 // =============>>> FUNCTIONS <<<============= //
 
@@ -89,6 +89,7 @@ function playPauseAudio(){
         playSvg.innerHTML = `<use xlink:href="./assets/svg/sprite.svg#media-play"></use>`; 
     } else if (!isPlay) {  
         audio.play();
+        //console.log(audio.volume);
         isPlay = true;
         playSvg.innerHTML = `<use xlink:href="./assets/svg/sprite.svg#media-pause"></use>`;
     }
@@ -144,6 +145,13 @@ function fillProgress(e) {
 
 function updateProgress(e) {
     audio.currentTime = (e.offsetX / this.clientWidth) * audio.duration;
+}
+
+function changeVolume(e) {
+    const sliderWidth = window.getComputedStyle(volumeSlider).width;
+    const newVolume = e.offsetX / parseInt(sliderWidth);
+    audio.volume = newVolume;
+    volumeSliderProgress.style.width = newVolume * 100 + '%';
 }
 
 function getName(){
