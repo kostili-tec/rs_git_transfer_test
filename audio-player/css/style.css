@@ -8,9 +8,12 @@
 }
 :root {
     --purple-box: rgb(139, 38, 206);
+    --buttons-progress-color: rgb(184, 104, 236);
     --white-color: #fff;
     --lines-color: #fff;
     --line-shadow: #FF91CF;
+    --volume-width: 100%;
+    --volume-height: 100%;
 }
 body {
     display: flex;
@@ -44,8 +47,8 @@ body {
     backdrop-filter: blur(10px);
 }
 .album-cover {
-    width: 22%;
-    height: auto;
+    width: 28%;
+    height: auto;    
     display: flex;
     flex-grow: 2;
     flex-shrink: 0;
@@ -60,6 +63,7 @@ body {
 }
 .album-cover__img{
     display: flex;
+    margin: 20px 20px;
     max-width: 100%;
     height: auto;
     max-height: 75%;
@@ -79,30 +83,30 @@ body {
 
 .controls{
     /* width: 50%; */
-    padding-top: 30px;
+    /* padding-top: 30px; */
     height: auto;
     display: flex;
+    justify-content: space-evenly;
     flex-grow: 9;
     flex-direction: column;
     border-left: 1px solid var(--purple-box);
     box-shadow: 0 0 .5em var(--purple-box);
-    
 }
 
 
 .buttons-container{
     width: 100%;
-    height: 75px;
-    padding: 10px 20px;
+    /* height: 75px; */
+    padding: 30px 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 .controls-btn{
     background: transparent;
-    width: 3rem;
-    height: 3rem;
-    border: 2px solid #fff;
+    width: 10rem;
+    height: 4rem;
+    border: 2px solid var(--line-shadow);
     border-radius: 0.3em;
     box-shadow: 0 0 .2em #fff,
                 inset 0 0 .2em #fff;
@@ -110,31 +114,54 @@ body {
     outline: none;
     /* border: none; */
 }
+.controls-btn:hover{
+    border: 2px solid var(--purple-box);
+    box-shadow: 0 0 .2em var(--line-shadow),
+    inset 0 0 .2em var(--line-shadow);
+}
+
 .icon{
-    width: 2rem;
-    height: 2rem;
-    fill: #fff;     
+    width: 3rem;
+    height: 3rem;
+    fill: var(--line-shadow);     
     position: relative;
+}
+.controls-btn:hover .icon{
+    fill: var(--purple-box)
 }
 .volume-btn{
     position: relative;    
+    transition: 0.25s; 
+}
+.volume-btn:hover{
+    border: none;
+    box-shadow: none;
+    
 }
 .volume-slider{
     position: absolute; 
-    left: 3rem;   
-    height: 2rem;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;   
+    height: var(--volume-height);
     width: 0;
     background-color: rgba(255, 255, 255, 0.295);
+
     box-shadow: 0 0 .5em var(--purple-box);
     transition: 0.25s; 
 }
 .volume-slider__progress{    
-    height: 2rem;
+    height: var(--volume-height);
     width: 50%;
-    background-color: var(--purple-box);
+    box-sizing: border-box;
+    /* background-color: var(--purple-box); */
+    background-color: rgba(164, 7, 226, 0.541);
 }
 .volume-btn:hover .volume-slider{   
-    width: 100px;
+    width: var(--volume-width);
+    z-index: 40;
+    border: 2px solid var(--line-shadow);
+    border-radius: 0.3em;
 }
 
 .progress-container{
@@ -145,7 +172,7 @@ body {
 }
 .progress-bar{
     width: 69%;
-    height: 5px;
+    height: 10px;
     margin: 0 10px;
     background-color: #fff;
     border-radius: 10px;
@@ -159,11 +186,36 @@ body {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--purple-box);
+    background-color: var(--buttons-progress-color);
     border-radius: 10px;
     transition: width 150ms ease-in-out;
 }
+.progress-bar:hover .progress{
+    background-color: var(--purple-box);
+}
 
+/* =================> Footer <=========================== */
+
+footer{
+    position: absolute;
+    bottom: 0;
+    z-index: 50;
+    width: 100%;
+    height: auto;
+}
+.footer-container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.footer-link:hover{
+    color: var(--line-shadow);
+}
+.footer-year{
+    margin-right: 50px;
+}
 
 /* =================> SynthWave Background <================== */
 
