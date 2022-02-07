@@ -8,6 +8,9 @@
 }
 :root {
     --purple-box: rgb(139, 38, 206);
+    --white-color: #fff;
+    --lines-color: #fff;
+    --line-shadow: #FF91CF;
 }
 body {
     display: flex;
@@ -18,15 +21,18 @@ body {
     background: radial-gradient(circle, #292254 0%, #180727 100%)
 }
 
-.container {
-    display: flex;
-    /* flex-grow: 1; */
-    position: relative;
+
+.audio-container {
+    display: flex;    
+    position: absolute;
+    bottom: 10%;
     border-radius: 1em;
     border: 2px solid var(--purple-box);
-    box-shadow: 0 0 .5em var(--purple-box);
+    /* box-shadow: 0 0 .5em var(--purple-box); */
+    box-shadow: 0 0 5px #FF91CF;
     -webkit-box-shadow: 0 0 .5em var(--purple-box);
     -moz-box-shadow: 0 0 .5em var(--purple-box);
+    z-index: 30;
 }
 
 .audio-player{
@@ -35,10 +41,10 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    
+    backdrop-filter: blur(10px);
 }
 .album-cover {
-    /* width: 50%; */
+    width: 22%;
     height: auto;
     display: flex;
     flex-grow: 2;
@@ -57,6 +63,8 @@ body {
     max-width: 100%;
     height: auto;
     max-height: 75%;
+    border: 1px solid var(--purple-box);
+    box-shadow: 0 0 10px #FF91CF;
 }
 
 .song-name{
@@ -143,6 +151,7 @@ body {
     border-radius: 10px;
     position: relative;
     cursor: pointer;
+    box-shadow: 0 0 .9em var(--purple-box);
 }
 .progress{
     position: absolute;
@@ -154,3 +163,280 @@ body {
     border-radius: 10px;
     transition: width 150ms ease-in-out;
 }
+
+
+/* =================> SynthWave Background <================== */
+
+body {
+    background: #180727;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    /* position: fixed; */
+    background: radial-gradient(circle, #292254 0%, #180727 100%);
+  }
+  
+  .mountains {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    bottom: 49%;
+    width: 100%;
+    height: 50%;
+  }
+  .mountains svg {
+    bottom: 0;
+    position: absolute;
+  }
+  .plane::before{
+    content: "";
+    width: 100vw;
+    height: 4px;
+    background: #fff;
+    box-shadow: 
+      0 0 8px #fff,
+      0 0 16px #fff,
+      0 0 24px #af62ff,
+      0 0 32px #af62ff;
+    position: absolute;
+    filter: blur(1px);
+    z-index: 20;
+  }
+  
+  .moon {
+    width: 30vw;
+    height: 30vw;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 -20px 40px -20px #F46585;
+  }
+  .moon:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(0deg, #febd5f 0%, #FEDE5C 100%);
+  }
+  .moon .line {
+    top: 0;
+    width: 100%;
+    height: 35%;
+    position: absolute;
+    animation: moonLinesSlide 6s ease-in infinite both;
+  }
+  .moon .line:nth-child(1) {
+    animation-delay: 0.6s;
+  }
+  .moon .line:nth-child(2) {
+    animation-delay: 1.2s;
+  }
+  .moon .line:nth-child(3) {
+    animation-delay: 1.8s;
+  }
+  .moon .line:nth-child(4) {
+    animation-delay: 2.4s;
+  }
+  .moon .line:nth-child(5) {
+    animation-delay: 3s;
+  }
+  .moon .line:nth-child(6) {
+    animation-delay: 3.6s;
+  }
+  .moon .line:nth-child(7) {
+    animation-delay: 4.2s;
+  }
+  .moon .line:nth-child(8) {
+    animation-delay: 4.8s;
+  }
+  .moon .line:nth-child(9) {
+    animation-delay: 5.4s;
+  }
+  .moon .line:nth-child(10) {
+    animation-delay: 6s;
+  }
+  
+  .plane {
+    z-index: 20;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background: #180727;
+    overflow: hidden;
+    /* border-top: 2px solid #FE50B1; */
+    box-shadow: 0 0 150px -60px #FE50B1;
+    background: linear-gradient(0deg, #180727 60%, #4E0646 100%);
+  }
+  .plane .vlines {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .plane .vlines .line {
+    box-shadow: 0 0 5px #FF91CF;
+  }
+  .plane .vlines .left {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    /* border-right: 1px solid #FE50B1; */
+    border-right: 1px solid var(--purple-box);
+  }
+  .plane .vlines .left .line {
+    right: 0%;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    background: var(--purple-box);
+    /* background: #FE50B1; */
+  }
+  .plane .vlines .left .line:nth-child(1) {
+    right: 12%;
+    transform-origin: 100% 0%;
+    transform: skewX(-45deg);
+  }
+  .plane .vlines .left .line:nth-child(2) {
+    right: 24%;
+    transform-origin: 100% 0%;
+    transform: skewX(-55deg);
+  }
+  .plane .vlines .left .line:nth-child(3) {
+    right: 36%;
+    transform-origin: 100% 0%;
+    transform: skewX(-65deg);
+  }
+  .plane .vlines .left .line:nth-child(4) {
+    right: 48%;
+    transform-origin: 100% 0%;
+    transform: skewX(-75deg);
+  }
+  .plane .vlines .left .line:nth-child(5) {
+    right: 60%;
+    transform-origin: 100% 0%;
+    transform: skewX(-85deg);
+  }
+  .plane .vlines .right {
+    width: 50%;
+    height: 100%;
+    right: 0;
+    position: absolute;
+    border-left: 1px solid var(--purple-box);
+  }
+  .plane .vlines .right .line {
+    right: 0%;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    /* background: #FE50B1; */
+    background: var(--purple-box);
+  }
+  .plane .vlines .right .line:nth-child(1) {
+    left: 12%;
+    transform-origin: 100% 0%;
+    transform: skewX(45deg);
+  }
+  .plane .vlines .right .line:nth-child(2) {
+    left: 24%;
+    transform-origin: 100% 0%;
+    transform: skewX(55deg);
+  }
+  .plane .vlines .right .line:nth-child(3) {
+    left: 36%;
+    transform-origin: 100% 0%;
+    transform: skewX(65deg);
+  }
+  .plane .vlines .right .line:nth-child(4) {
+    left: 48%;
+    transform-origin: 100% 0%;
+    transform: skewX(75deg);
+  }
+  .plane .vlines .right .line:nth-child(5) {
+    left: 60%;
+    transform-origin: 100% 0%;
+    transform: skewX(85deg);
+  }
+  .plane .lines {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .plane .lines .line {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 90%;
+    /* background: #FE50B1; */
+    background: var(--purple-box);
+    animation: linesSlide 3s ease-in infinite both;
+    box-shadow: 0 0 5px #FF91CF;
+  }
+  .plane .lines .line:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  .plane .lines .line:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+  .plane .lines .line:nth-child(3) {
+    animation-delay: 0.9s;
+  }
+  .plane .lines .line:nth-child(4) {
+    animation-delay: 1.2s;
+  }
+  .plane .lines .line:nth-child(5) {
+    animation-delay: 1.5s;
+  }
+  .plane .lines .line:nth-child(6) {
+    animation-delay: 1.8s;
+  }
+  .plane .lines .line:nth-child(7) {
+    animation-delay: 2.1s;
+  }
+  .plane .lines .line:nth-child(8) {
+    animation-delay: 2.4s;
+  }
+  .plane .lines .line:nth-child(9) {
+    animation-delay: 2.7s;
+  }
+  .plane .lines .line:nth-child(10) {
+    animation-delay: 3s;
+  }  
+  
+  @keyframes linesSlide {
+    from {
+      bottom: 100%;
+      height: 2px;
+    }
+    to {
+      bottom: -10px;
+      height: 10px;
+    }
+  }
+  @keyframes moonLinesSlide {
+    from {
+      top: 100%;
+      height: 2px;
+      background: #FE6770;
+    }
+    to {
+      top: -40%;
+      height: 35%;
+      background: #FEFE53;
+    }
+  }
