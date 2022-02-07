@@ -82,8 +82,7 @@ function playPauseAudio(){
         //console.log(audio.volume);
         isPlay = true;
         playSvg.innerHTML = `<use xlink:href="./assets/svg/sprite.svg#media-pause"></use>`;
-    }
-    console.log(isPlay);
+    }    
 }
 
 function nextSong() {
@@ -183,3 +182,5 @@ function tickerName() {
 }
 
     setInterval(tickerName, 2000);
+
+    console.log("Вроде я все пункты выполнил. Единсвенный трабл, это логотип школы в футере. В формате SVG он не совсем корректно отображался. А если вставлять как обычную картинку то он немного портит стиль всего проекта)) Поэтому вместо лого обычная ссылка с названием.")
