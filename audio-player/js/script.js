@@ -1,4 +1,3 @@
-// const audio = document.querySelector('audio');
 const coverImg = document.querySelector('.album-cover__img');
 const songName = document.querySelector('.song-name__h1');
 const playBtn = document.querySelector('.play-btn');
@@ -62,21 +61,12 @@ volumeSlider.addEventListener('click', changeVolume);
 
 // =============>>> FUNCTIONS <<<============= //
 
-function playPauseSong(){   
-    if (audio.duration > 0 && !audio.paused) {
-        audio.pause();
-        playSvg.innerHTML = `<use xlink:href="./assets/svg/sprite.svg#media-pause"></use>`;        
-    } else {        
-        audio.play();
-        playSvg.innerHTML = `<use xlink:href="./assets/svg/sprite.svg#media-play"></use>`;
-    }
-}
-
 function playAudio() {
     audio.src = songs[current].audioSrs;
     audio.currentTime = 0;
     audio.play();
-    isPlay = true;   
+    isPlay = true; 
+    playSvg.innerHTML = `<use xlink:href="./assets/svg/sprite.svg#media-pause"></use>`;   
 }
 function pauseAudio() {
     audio.pause();
@@ -93,6 +83,7 @@ function playPauseAudio(){
         isPlay = true;
         playSvg.innerHTML = `<use xlink:href="./assets/svg/sprite.svg#media-pause"></use>`;
     }
+    console.log(isPlay);
 }
 
 function nextSong() {
@@ -116,7 +107,8 @@ function playNextOrBack(){
     audio.srs = songs[current].audioSrs;
     coverImg.src = songs[current].coverImg;    
     indexStart = 0;
-    playAudio();       
+    playAudio();     
+
 }
 
 function fillProgress(e) {
@@ -161,7 +153,7 @@ function getName(){
 function cutPushName(songNameCut){
     if (songNameCut.length >= 21) {
         songNameCut = `${songNameCut.substring(0, 22)}...`;       
-        console.log(songNameCut);
+        // console.log(songNameCut);
         return songNameCut;
     } else return songNameCut;
 }    
@@ -179,8 +171,8 @@ function tickerName() {
     }
     indexTicker = indexStart;
     let tickEnd = tickChange.join('');
-        console.log(indexTicker);
-        console.log(tickEnd);    
+        // console.log(indexTicker);
+        // console.log(tickEnd);    
     songName.textContent = cutPushName(tickEnd);   
     
     if(indexStart >= tickName.length){
@@ -191,7 +183,3 @@ function tickerName() {
 }
 
     setInterval(tickerName, 2000);
-
-
-// // остановить вывод через 5 секунд
-// setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
