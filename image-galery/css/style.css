@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+header{
+    border-bottom: 3px solid orange;
+}
+.container{
+    max-width: 1280px;
+    margin: auto;
+}
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 70px;
+    padding: 0 20px;
+}
+.header-container h2{
+    font-size: 2rem;
+}
+
+.search-box{
+    position: relative;
+    width: 350px;
+}
+.search-box input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1rem;
+    padding: 8px 12px;
+    background-repeat: 25px;
+    outline: none;
+    border: 1px solid #DDD;
+}
+
+.grid{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.img{
+    width: 380px;
+    height: 214px;
+    margin-top: 15px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 2px;
+    cursor: pointer;
+}
