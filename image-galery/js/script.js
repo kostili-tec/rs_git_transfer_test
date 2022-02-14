@@ -67,7 +67,7 @@ input.addEventListener('input', () =>{
 });
 randomBtn.addEventListener('click', () => {
     const randomUrl = quaries.url + quaries.tenRandom + quaries.clientId;
-    console.log(randomUrl);
+    // console.log(randomUrl);
     clearPage();
     getData(randomUrl, 'random');    
 })
@@ -80,14 +80,14 @@ prevBtn.addEventListener('click', () => {
     quaries.page = `&page=${numberPage}`;
     checkInput();
     getData(findUrl, 'results');
-    console.log(quaries.page);
+    // console.log(quaries.page);
 });
 
 nextBtn.addEventListener('click', () => {
     numberPage++;
     quaries.page = `&page=${numberPage}`;
-    console.log(numberPage);
-    console.log(quaries.page);
+    // console.log(numberPage);
+    // console.log(quaries.page);
     checkInput();
     getData(findUrl, 'results');
 });
@@ -96,10 +96,9 @@ nextBtn.addEventListener('click', () => {
 
 async function getData(url, type) {
     const res = await fetch(url);
-    const data = await res.json();
-    console.log(typeof(data));
-    console.log(data);
-    console.log(data.total_pages);
+    const data = await res.json();   
+    // console.log(data);
+    // console.log(data.total_pages);
     if (type == 'results'){
         showDataResults(data);
     } else if (type == 'random') {
@@ -113,7 +112,7 @@ function showOne(obj){
         imgDiv.classList.add('img');
         imgDiv.style.backgroundImage = `url(${obj.urls.regular})`;
         gridDiv.append(imgDiv);
-        console.log(Object.keys(obj).length);
+        // console.log(Object.keys(obj).length);
 }
 
 // ============= Random ============ //
@@ -124,8 +123,7 @@ function showRandomData(link){
         imgDiv.style.backgroundImage = `url(${item.urls.regular})`;
         gridDiv.append(imgDiv);
         clickDownload(item, imgDiv);
-    })   
-    console.log(Object.keys(link).length);
+    })      
 }
 // ============= Search =========== //
 function showDataResults(link) {
@@ -152,23 +150,10 @@ function clickDownload(objItem, toItem){
         toItem.append(downContainer);
         downContainer.append(linkButton); 
 }
-function hoverDownload(link){
-    const imgSelector = document.querySelectorAll('.img');
-    console.log(imgSelector);
-    imgSelector.forEach(item => {
-        const downloadCont = document.createElement('div');
-        const linkButton = document.createElement('a');            
-            downloadCont.classList.add('download-container');
-            linkButton.classList.add('download-btn');
-            linkButton.textContent = 'download';
-            item.append(downloadCont);
-            downloadCont.append(linkButton);            
-    })    
-}
 
 function clearPage(){
     let imgDiv = document.querySelectorAll('.img');
-    console.log(imgDiv);
+    // console.log(imgDiv);
         imgDiv.forEach(item => {
             item.remove();
         });
@@ -179,7 +164,7 @@ function checkInput(){
     inputValue = input.value; 
     quaries.searchQuary = `?query=${inputValue}`;
     findUrl = quaries.url + quaries.searchPhotos + quaries.searchQuary + quaries.page + quaries.perPage + quaries.clientId;
-    console.log(findUrl);
+    // console.log(findUrl);
 }
 function showHideBtns(){
     if (btnShows == false) {
@@ -188,10 +173,9 @@ function showHideBtns(){
         nav.classList.remove('hide');
     }
 }
-function testFunc() {
-    quaries.inputValue = input.value; 
-    console.log(quaries.inputValue);
-    console.log(quaries);
-    findUrl = quaries.url + quaries.photos + quaries.searchQuary + quaries.inputValue + quaries.clientId;
-    console.log(findUrl);
-}
+
+console.log('1. Вёрстка +10 \n на странице есть несколько фото и строка поиска +5 \n в футере приложения есть ссылка на гитхаб автора приложения, год создания приложения, логотип курса со ссылкой на курс +5\n');
+console.log('2. При загрузке приложения на странице отображаются полученные от API изображения +10 \n');
+console.log('3. Если в поле поиска ввести слово и отправить поисковый запрос, на странице отобразятся изображения соответствующей тематики, если такие данные предоставляет API +10\n');
+console.log('4. Поиск +30 \n при открытии приложения курсор находится в поле ввода +5\n есть placeholder +5 \n автозаполнение поля ввода отключено (нет выпадающего списка с предыдущими запросами) +5\n поисковый запрос можно отправить нажатием клавиши Enter +5 \n после отправки поискового запроса и отображения результатов поиска, поисковый запрос продолжает отображаться в поле ввода +5 \n в поле ввода есть крестик при клике по которому поисковый запрос из поля ввода удаляется и отображается placeholder +5\n');
+console.log('5. На усмотрение проверяющего, я особо ничего нового в дизайн не привносил, только добавил эффекты наведения на изображения и там же кнопку скачать(не смог заставить эту заразу именно начать скачивать картинку, она открывает ее фулл). Кнопка рандом и при поиске появляются кнопки которым можно перелистывать страницы с изображениями');
