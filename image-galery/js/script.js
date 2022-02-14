@@ -3,19 +3,23 @@ const gridDiv = document.querySelector('.grid');
 const input = document.getElementById('input');
 const testBtn = document.querySelector('.test-btn');
 const nav = document.querySelector('.nav');
+const searchBtn = document.getElementById('search');
+const crossClear = document.getElementById('cross');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 
-const url = 'https://api.unsplash.com/photos/?client_id=FYdN3NPqRZfJlZqP-pOElRcZ95ARwjpFvreQ-1zSBOM';
+// const startUrl = 'https://api.unsplash.com/photos/?client_id=FYdN3NPqRZfJlZqP-pOElRcZ95ARwjpFvreQ-1zSBOM';
+const startUrl = 'https://api.unsplash.com/photos/?client_id=FYdN3NPqRZfJlZqP-pOElRcZ95ARwjpFvreQ-1zSBOM';
 let numberPage = 1; 
-let = inputValue = '';
-let = btnShows = false;
+let inputValue = '';
+let btnShows = false;
 const quaries = {
     url: 'https://api.unsplash.com/',
     photos: 'photos/',
     searchPhotos: 'search/photos',
     oneRandom: 'photos/random?query=spring',
-    tenRandom: 'photos/random?query=spring&count=20',
+    tenRandom: 'photos/random?query=car&count=10',
+    startQ: '?query=car',
     page: `&page=${numberPage}`,
     perPage: '&per_page=12',
     searchQuary: `?query=${inputValue}`,    
@@ -25,17 +29,45 @@ const quaries = {
 const testUrl = quaries.url + quaries.tenRandom + quaries.clientId;
 const testOne = quaries.url + quaries.oneRandom + quaries.clientId;
 let findUrl;
-// console.log(testOne)
-// console.log(quaries.url + quaries.clientId);
-// console.log(input.value);
 
-document.addEventListener('DOMContentLoaded', showHideBtns);
 
-// findBtn.addEventListener('click', getData);
+document.addEventListener('DOMContentLoaded', () => {
+    showHideBtns();
+    findUrl = quaries.url + quaries.searchPhotos + quaries.startQ + quaries.perPage + quaries.clientId;
+});
+
 findBtn.addEventListener('click', () => {
     checkInput();
     getData(findUrl);
 });
+searchBtn.addEventListener('click', () => {
+    checkInput();
+    getData(findUrl);
+});
+
+// ======== ПОИСК ПО ENTER ========== //
+input.addEventListener('focus', () => {
+    input.addEventListener('keyup', (event) =>{
+        if(event.key == 'Enter') {
+            checkInput();
+            getData(findUrl);
+        }
+    })
+})
+// ======== СТЕРЕТЬ ИНПУТ ========== //
+input.addEventListener('input', () =>{
+    if (input.value != ''){
+        cross.style.display = 'block';
+        crossClear.addEventListener('click', () =>{
+            input.value = '';
+            cross.style.display = 'none';
+        })
+    } else {
+        cross.style.display = 'none';
+    }
+    
+});
+
 testBtn.addEventListener('click', () => {
     inputValue = input.value; 
     quaries.searchQuary = `?query=${inputValue}`
@@ -57,6 +89,8 @@ prevBtn.addEventListener('click', () => {
         numberPage = 0;
     }
     quaries.page = `&page=${numberPage}`;
+    checkInput();
+    getData(findUrl);
     console.log(quaries.page);
 });
 
@@ -65,24 +99,18 @@ nextBtn.addEventListener('click', () => {
     quaries.page = `&page=${numberPage}`;
     console.log(numberPage);
     console.log(quaries.page);
+    checkInput();
+    getData(findUrl);
 });
-// testBtn.addEventListener('click', testFunc);
 
 async function getData(url) {
     const res = await fetch(url);
     const data = await res.json();
     console.log(typeof(data));
     console.log(data);
-    // showData(data);
+    console.log(data.total_pages);
     showDataFor(data);
-    // showOne(data);
 }
-
-// function getUrl(obj) {
-//     if (!input.value) {
-//         const inputUrl = 
-//     }
-// }
 
 function showOne(obj){
         const imgDiv = document.createElement('div');
@@ -93,8 +121,7 @@ function showOne(obj){
 
 }
 
-function showData(link){
-    
+function showData(link){    
     link.map(item => {        
         const imgDiv = document.createElement('div');
         imgDiv.classList.add('img');
@@ -107,16 +134,39 @@ function showData(link){
 function showDataFor(link) {
     clearPage();
     link.results.forEach(item => {
-
         const imgDiv = document.createElement('div');
         imgDiv.classList.add('img');
         imgDiv.style.backgroundImage = `url(${item.urls.regular})`;
         gridDiv.append(imgDiv);
-        // console.log(item);
+            const downContainer = document.createElement('div');
+            const linkButton = document.createElement('a');
+                downContainer.classList.add('download-container');
+                linkButton.classList.add('download-btn');
+                linkButton.textContent = 'download';               
+                linkButton.setAttribute('href', `${item.links.download}`);
+                linkButton.setAttribute('download', "");
+                linkButton.setAttribute('target', '_blank');                
+                imgDiv.append(downContainer);
+                downContainer.append(linkButton);   
     })
     btnShows = true;
     showHideBtns();
+    
 }
+function hoverDownload(link){
+    const imgSelector = document.querySelectorAll('.img');
+    console.log(imgSelector);
+    imgSelector.forEach(item => {
+        const downloadCont = document.createElement('div');
+        const linkButton = document.createElement('a');            
+            downloadCont.classList.add('download-container');
+            linkButton.classList.add('download-btn');
+            linkButton.textContent = 'download';
+            item.append(downloadCont);
+            downloadCont.append(linkButton);            
+    })    
+}
+
 function clearPage(){
     let imgDiv = document.querySelectorAll('.img');
     console.log(imgDiv);
