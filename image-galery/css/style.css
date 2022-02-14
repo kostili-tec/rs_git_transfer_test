@@ -7,12 +7,18 @@ html {
     overflow-x: hidden;
 }
 body{
+    height: 100%;
     font-family: 'Montserrat', sans-serif;
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
 }
-header{
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.header{
     border-bottom: 3px solid orange;
 }
 .container{
@@ -31,13 +37,20 @@ header{
 .header-container h2{
     font-size: 2rem;
 }
+.main{
+    flex: 1 1 auto;
+    min-height: 100%;
+}
 
 .search-box{
     position: relative;
-    width: 350px;
+    width: 550px;
+    display: flex;
+    flex-direction: row;
 }
 .search-box input {
     box-sizing: border-box;
+    /* padding-left: 30px; */
     width: 100%;
     font-size: 1rem;
     padding: 8px 12px;
@@ -67,7 +80,8 @@ header{
     cursor: pointer;
 }
 .random-btn{
-    
+    margin-right: 30px;
+    position: relative;
 }
 .grid{
     width: 100%;
@@ -128,15 +142,64 @@ header{
 .nav{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding-top: 20px;
 }
 .nav-btn{
     height: 40px;
-    width: 100px;
+    width: 150px;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 2px;
+}
+.nav-btn:hover{
+    background-color:rgba(255, 255, 255, 0.322);
+    border-color: #8C959D;
+    /* color: rgba(255, 255, 255, 0.548); */
 }
 
 .hide{
     display: none;
+}
+
+.footer{    
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    flex-shrink: 0;
+    
+}
+.footer-container{
+    margin-top: 20px;
+    padding: 0 20px;
+    display: flex;
+    /* flex: 0 0 auto; */
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-size: 2rem;
+    /* border-top: 3px solid orange; */
+    background-color: orange;
+    color: #000;
+}
+.footer-github{
+    display: flex;    
+    
+}
+.footer-github a{
+    padding-left: 20px;
+    text-decoration: none;
+    color: #000;
+}
+.footer-rs_school{
+    padding-right: 40px;
+    height: 10%;
+    width: 10%;
 }

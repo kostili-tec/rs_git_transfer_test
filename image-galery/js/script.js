@@ -34,6 +34,8 @@ let findUrl;
 document.addEventListener('DOMContentLoaded', () => {
     showHideBtns();
     findUrl = quaries.url + quaries.searchPhotos + quaries.startQ + quaries.perPage + quaries.clientId;
+    const randomUrl = quaries.url + quaries.tenRandom + quaries.clientId;
+    getData(randomUrl, 'random');
 });
 
 searchBtn.addEventListener('click', () => {
@@ -69,12 +71,7 @@ randomBtn.addEventListener('click', () => {
     clearPage();
     getData(randomUrl, 'random');    
 })
-testBtn.addEventListener('click', () => {
-    const randomUrl = quaries.url + quaries.tenRandom + quaries.clientId;
-    console.log(randomUrl);
-    clearPage();
-    getData(randomUrl, 'random');    
-});
+
 prevBtn.addEventListener('click', () => {
     numberPage--;
     if (numberPage < 0) {
@@ -94,6 +91,8 @@ nextBtn.addEventListener('click', () => {
     checkInput();
     getData(findUrl, 'results');
 });
+
+// ============== Functions ================ //
 
 async function getData(url, type) {
     const res = await fetch(url);
