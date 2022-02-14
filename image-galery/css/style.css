@@ -66,6 +66,9 @@ header{
     color:#000;    
     cursor: pointer;
 }
+.random-btn{
+    
+}
 .grid{
     width: 100%;
     display: flex;

@@ -1,10 +1,10 @@
-const findBtn = document.querySelector('.find');
 const gridDiv = document.querySelector('.grid');
 const input = document.getElementById('input');
 const testBtn = document.querySelector('.test-btn');
 const nav = document.querySelector('.nav');
 const searchBtn = document.getElementById('search');
 const crossClear = document.getElementById('cross');
+const randomBtn = document.querySelector('.random-btn');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 
@@ -18,7 +18,7 @@ const quaries = {
     photos: 'photos/',
     searchPhotos: 'search/photos',
     oneRandom: 'photos/random?query=spring',
-    tenRandom: 'photos/random?query=car&count=10',
+    tenRandom: 'photos/random?count=12',
     startQ: '?query=car',
     page: `&page=${numberPage}`,
     perPage: '&per_page=12',
@@ -36,13 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     findUrl = quaries.url + quaries.searchPhotos + quaries.startQ + quaries.perPage + quaries.clientId;
 });
 
-findBtn.addEventListener('click', () => {
-    checkInput();
-    getData(findUrl);
-});
 searchBtn.addEventListener('click', () => {
     checkInput();
-    getData(findUrl);
+    getData(findUrl, 'results');
 });
 
 // ======== ПОИСК ПО ENTER ========== //
@@ -50,7 +46,7 @@ input.addEventListener('focus', () => {
     input.addEventListener('keyup', (event) =>{
         if(event.key == 'Enter') {
             checkInput();
-            getData(findUrl);
+            getData(findUrl, 'results');
         }
     })
 })
@@ -67,21 +63,17 @@ input.addEventListener('input', () =>{
     }
     
 });
-
+randomBtn.addEventListener('click', () => {
+    const randomUrl = quaries.url + quaries.tenRandom + quaries.clientId;
+    console.log(randomUrl);
+    clearPage();
+    getData(randomUrl, 'random');    
+})
 testBtn.addEventListener('click', () => {
-    inputValue = input.value; 
-    quaries.searchQuary = `?query=${inputValue}`
-    console.log('inputValue = ' + inputValue);
-    console.log('searchQuary = ' + quaries.searchQuary);
-    // console.log(quaries);
-    // findUrl = quaries.url + quaries.searchPhotos + quaries.searchQuarie + quaries.inputValue + quaries.perPage + quaries.clientId;
-
-    // findUrl = quaries.testVal + quaries.perPage + quaries.page + quaries.clientId; //worked
-    // https://api.unsplash.com/search/photos?query=winter&per_page=11&page=1&client_id=FYdN3NPqRZfJlZqP-pOElRcZ95ARwjpFvreQ-1zSBOM
-
-    findUrl = quaries.url + quaries.searchPhotos + quaries.searchQuary + quaries.page + quaries.perPage + quaries.clientId;
-    console.log(findUrl);
-    // console.log(quaries.page);
+    const randomUrl = quaries.url + quaries.tenRandom + quaries.clientId;
+    console.log(randomUrl);
+    clearPage();
+    getData(randomUrl, 'random');    
 });
 prevBtn.addEventListener('click', () => {
     numberPage--;
@@ -90,7 +82,7 @@ prevBtn.addEventListener('click', () => {
     }
     quaries.page = `&page=${numberPage}`;
     checkInput();
-    getData(findUrl);
+    getData(findUrl, 'results');
     console.log(quaries.page);
 });
 
@@ -100,16 +92,21 @@ nextBtn.addEventListener('click', () => {
     console.log(numberPage);
     console.log(quaries.page);
     checkInput();
-    getData(findUrl);
+    getData(findUrl, 'results');
 });
 
-async function getData(url) {
+async function getData(url, type) {
     const res = await fetch(url);
     const data = await res.json();
     console.log(typeof(data));
     console.log(data);
     console.log(data.total_pages);
-    showDataFor(data);
+    if (type == 'results'){
+        showDataResults(data);
+    } else if (type == 'random') {
+        showRandomData(data);
+    }
+    
 }
 
 function showOne(obj){
@@ -118,40 +115,43 @@ function showOne(obj){
         imgDiv.style.backgroundImage = `url(${obj.urls.regular})`;
         gridDiv.append(imgDiv);
         console.log(Object.keys(obj).length);
-
 }
 
-function showData(link){    
+// ============= Random ============ //
+function showRandomData(link){    
     link.map(item => {        
         const imgDiv = document.createElement('div');
         imgDiv.classList.add('img');
         imgDiv.style.backgroundImage = `url(${item.urls.regular})`;
         gridDiv.append(imgDiv);
+        clickDownload(item, imgDiv);
     })   
     console.log(Object.keys(link).length);
 }
-
-function showDataFor(link) {
+// ============= Search =========== //
+function showDataResults(link) {
     clearPage();
     link.results.forEach(item => {
         const imgDiv = document.createElement('div');
         imgDiv.classList.add('img');
         imgDiv.style.backgroundImage = `url(${item.urls.regular})`;
         gridDiv.append(imgDiv);
-            const downContainer = document.createElement('div');
-            const linkButton = document.createElement('a');
-                downContainer.classList.add('download-container');
-                linkButton.classList.add('download-btn');
-                linkButton.textContent = 'download';               
-                linkButton.setAttribute('href', `${item.links.download}`);
-                linkButton.setAttribute('download', "");
-                linkButton.setAttribute('target', '_blank');                
-                imgDiv.append(downContainer);
-                downContainer.append(linkButton);   
-    })
+            clickDownload(item, imgDiv);            
+    });
     btnShows = true;
-    showHideBtns();
-    
+    showHideBtns();    
+}
+function clickDownload(objItem, toItem){
+    const downContainer = document.createElement('div');
+    const linkButton = document.createElement('a');
+        downContainer.classList.add('download-container');
+        linkButton.classList.add('download-btn');
+        linkButton.textContent = 'download';               
+        linkButton.setAttribute('href', `${objItem.links.download}`);
+        linkButton.setAttribute('download', "");
+        linkButton.setAttribute('target', '_blank');                
+        toItem.append(downContainer);
+        downContainer.append(linkButton); 
 }
 function hoverDownload(link){
     const imgSelector = document.querySelectorAll('.img');
