@@ -11,7 +11,8 @@
 .container{
     height: 100vh;
     display: flex;
-    background: #060AB2;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(49,49,138,1) 42%, rgba(0,212,255,1) 100%); 
 }
 
 .memory-game{
@@ -30,7 +31,7 @@
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .5s;
+    transition: transform .1s;
 }
 .memory-card:active {
     transform: scale(0.97);
