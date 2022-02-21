@@ -1,9 +1,14 @@
 const cards = document.querySelectorAll('.memory-card');
+const restart = document.querySelector('.restart');
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let count = 0;
+let count = 0, step = 0;
+
+shuffle();
+
+restart.addEventListener('click', flipAll)
 
 function flipCard() {
     if (lockBoard) return;
@@ -16,15 +21,21 @@ function flipCard() {
         return;
     }
     secondCard = this;
+    step++;
+   
+    console.log(`step = ${step}`);
+    
     // hasFlippedCard = false;
 
     checkForMath();
+
+    checkFlip();
 }
 
 function checkForMath() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
     isMatch ? disableCards() : unflipCards();
-    isMatch ? count + 2 : count - 2;
+    // isMatch ? count++ : count--;
     console.log(`count: ${count}`);
 }
 
@@ -43,7 +54,7 @@ function unflipCards(){
         secondCard.classList.remove('flip');
         // lockBoard = false;
         resetBoard();
-    }, 1500);
+    }, 1000);
 }
 
 function resetBoard() {
@@ -57,27 +68,36 @@ function kamaPunch(){
     // setInterval(kamaPunch, 100);
     // setInterval(() => { clearInterval(kamaPunch);}, 5000);
     
-
-function flipAll(){    
-  
+function checkFlip(){
     cards.forEach(card =>{
         if (card.classList.contains('flip')) {
             count++;
+        } 
+        if (count != 12) {
+            count = 0;
         }
-    }) 
+    })
     if (count == 12) {
+        count = 0; 
+        flipAll();  
+    }
+}
+
+function flipAll(){
         cards.forEach(card => {
             card.classList.remove('flip');
         })
        
         cards.forEach(card => card.addEventListener('click', flipCard));
-    }
-    count = 0;
+    
+    // count = 0;
+    step = 0;
+    shuffle();
     // disableCards();
     
 }
 
-(function shuffle() {
+function shuffle() {
     // cards.forEach(card => {
     //     let randomPos = Math.floor(Math.random() * 12);
     //     card.style.order = randomPos;
@@ -93,7 +113,8 @@ function flipAll(){
         console.log(`${card.dataset.framework} = ${ randomArr[index]}`);
     })
     // console.log(randomArr);
-})();
+};
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 console.log('test');
+
