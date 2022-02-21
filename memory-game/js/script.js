@@ -1,3 +1,5 @@
+alert('Привет! Я не успел сделать это задание =( Прошу дать мне несколько дней и оставить свои контакты в оценке задания(или сразу написать мне), чтобы я с вами связался для повтороной проверки . Спасибо за понимание \n Telegram: https://t.me/nebuchadnezzars_dream \n Disсord: EHG#4728(danil (@kostili-tec)) (В консоле продублирую)');
+console.log('Привет! Я не успел сделать это задание =( Прошу дать мне несколько дней и оставить свои контакты в оценке задания(или сразу написать мне), чтобы я с вами связался для повтороной проверки . Спасибо за понимание \n Telegram: https://t.me/nebuchadnezzars_dream \n Disсord: EHG#4728(danil (@kostili-tec)) (В консоле продублирую)');
 const cards = document.querySelectorAll('.memory-card');
 const restart = document.querySelector('.restart');
 
