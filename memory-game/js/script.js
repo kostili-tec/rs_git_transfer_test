@@ -1,16 +1,42 @@
-alert('Привет! Я не успел сделать это задание =( Прошу дать мне несколько дней и оставить свои контакты в оценке задания(или сразу написать мне), чтобы я с вами связался для повтороной проверки . Спасибо за понимание \n Telegram: https://t.me/nebuchadnezzars_dream \n Disсord: EHG#4728(danil (@kostili-tec)) (В консоле продублирую)');
-console.log('Привет! Я не успел сделать это задание =( Прошу дать мне несколько дней и оставить свои контакты в оценке задания(или сразу написать мне), чтобы я с вами связался для повтороной проверки . Спасибо за понимание \n Telegram: https://t.me/nebuchadnezzars_dream \n Disсord: EHG#4728(danil (@kostili-tec)) (В консоле продублирую)');
 const cards = document.querySelectorAll('.memory-card');
-const restart = document.querySelector('.restart');
+const restart = document.querySelector('.reset-icon');
+const showMenu = document.querySelector('.table-icon');
+const gameSection = document.querySelector('.memory-game');
+const scoreSection = document.querySelector('.table-records');
+const scoreRecordsH2 = document.querySelector('.score-records__h2');
+const scoreMain = document.querySelector('.score-main__h3');
+const scoreList = document.querySelector('.records__ol');
+const newGame = document.querySelector('.new-game__btn');
+const reset = document.querySelector('.reset__btn');
 
 let hasFlippedCard = false;
 let lockBoard = false;
+let isShowed = false;
 let firstCard, secondCard;
 let count = 0, step = 0;
+let arrResults = [];
 
 shuffle();
 
-restart.addEventListener('click', flipAll)
+document.addEventListener('DOMContentLoaded', () =>{
+    // if(localStorage.storedList) {
+    //     loadLocalStore();
+    // }
+    if(localStorage.arrResultsLocal) {
+        arrResults = JSON.parse(localStorage.getItem('arrResultsLocal'));
+        createScore();
+    }
+});
+
+newGame.addEventListener('click', () => {
+    showHideScore();
+    flipAll();
+});
+reset.addEventListener('click', () => {
+    deleteLocalScore();
+})
+restart.addEventListener('click', flipAll);
+showMenu.addEventListener('click', showHideScore);
 
 function flipCard() {
     if (lockBoard) return;
@@ -24,6 +50,8 @@ function flipCard() {
     }
     secondCard = this;
     step++;
+    scoreRecordsH2.textContent = `Your Score: ${step}`;
+    scoreMain.textContent = `Score: ${step}`;
    
     console.log(`step = ${step}`);
     
@@ -31,12 +59,26 @@ function flipCard() {
 
     checkForMath();
 
-    checkFlip();
+    // checkFlip();
 }
 
 function checkForMath() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
     isMatch ? disableCards() : unflipCards();
+    if (isMatch) {
+        count++;
+    }
+
+    if (count == 6) {
+        alert('WIN');
+        // addScore();
+        saveLocalResult(step);
+        createScore();
+        showHideScore(true);
+        // saveLocalStore();
+        // loadLocalStore();
+        count = 0;
+    }
     // isMatch ? count++ : count--;
     console.log(`count: ${count}`);
 }
@@ -63,13 +105,6 @@ function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
-
-function kamaPunch(){
-    cards[1].classList.toggle('flip');
-}
-    // setInterval(kamaPunch, 100);
-    // setInterval(() => { clearInterval(kamaPunch);}, 5000);
-    
 function checkFlip(){
     cards.forEach(card =>{
         if (card.classList.contains('flip')) {
@@ -86,37 +121,121 @@ function checkFlip(){
 }
 
 function flipAll(){
-        cards.forEach(card => {
-            card.classList.remove('flip');
-        })
-       
-        cards.forEach(card => card.addEventListener('click', flipCard));
-    
-    // count = 0;
+    cards.forEach(card => {
+        card.classList.remove('flip');
+    })
+
+    cards.forEach(card => card.addEventListener('click', flipCard));  
+   
     step = 0;
     shuffle();
     // disableCards();
     
 }
 
-function shuffle() {
-    // cards.forEach(card => {
-    //     let randomPos = Math.floor(Math.random() * 12);
-    //     card.style.order = randomPos;
-    //     console.log(`${card.dataset.framework} = ${randomPos}`);
-    // });
+function shuffle() {    
     let randomArr = [];
     for (let i = 0; i < 12; i++) {
         randomArr[i] = i;
     }
     randomArr.sort(() => Math.random() - 0.5);
+
+    
     cards.forEach((card, index) => {
         card.style.order = randomArr[index];
-        console.log(`${card.dataset.framework} = ${ randomArr[index]}`);
+        
+        console.log(`${card.dataset.framework} = ${ randomArr[index]}`);        
     })
     // console.log(randomArr);
-};
+}
+
+function showHideScore(showOrHide) {
+    const showRecord = () => {        
+        isShowed = true;
+        gameSection.style = 'display: none';
+        scoreSection.style = 'display: flex;';
+        scoreMain.style = 'display: none';
+    }
+    const hideRecord = () => {       
+        isShowed = false;
+        gameSection.style = 'display: flex;';
+        scoreSection.style = 'display: none;';
+        scoreMain.style = 'display: block';
+    }
+    if (showOrHide == true) return showRecord();
+    if (showOrHide == false) return hideRecord();
+
+    isShowed == false ? showRecord() : hideRecord();
+}
+
+function saveLocalResult(result){   
+    if (arrResults.length >= 10) {
+        arrResults.splice(0, 1);
+    }
+    arrResults.push(result);
+    localStorage.setItem('arrResultsLocal', JSON.stringify(arrResults));
+}
+
+function createScore(){
+    clearScore();
+    arrResults.map((item, index) => {
+        let newScore = document.createElement("li");
+        newScore.classList.add('round');
+        newScore.textContent = `Score: ${item}`;
+        scoreList.append(newScore);
+
+    })
+}
+
+function clearScore(){    
+    scoreList.innerHTML = "";
+}
+function deleteLocalScore(){
+    arrResults.splice(0, arrResults.length);
+    localStorage.setItem('arrResultsLocal', JSON.stringify(arrResults));
+    clearScore();
+}
+
+
+
+
+
+// ============ OLD
+
+function saveLocalStore() {
+    localStorage.storedList = scoreList.innerHTML;
+}
+
+function loadLocalStore(){
+    scoreList.innerHTML = localStorage.storedList;
+}
+
+
+
+function addScore(){
+    let newScore = document.createElement("li");
+    newScore.classList.add('round');
+    newScore.textContent = `Score: ${step}`;
+    scoreList.append(newScore);
+    saveLocalStore();
+}
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
-console.log('test');
+// console.log('test');
 
+const showName = () => {
+    const clearName = () =>{
+        const pShow = document.querySelectorAll('.showName');
+        pShow.forEach(index => {
+            index.remove();
+        })
+    };
+    clearName();
+    cards.forEach((card, index) => {    
+        let p = document.createElement('p');
+        p.className = 'showName';
+        p.textContent = `${card.dataset.framework}`;
+        card.append(p);
+    })
+}
