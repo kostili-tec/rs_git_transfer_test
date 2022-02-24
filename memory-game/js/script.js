@@ -1,3 +1,19 @@
+console.log(`
+1. Вёрстка +10
+    реализован интерфейс игры +5
+    в футере приложения есть ссылка на гитхаб автора приложения, год создания приложения, логотип курса со ссылкой на курс +5
+2. Логика игры. Карточки, по которым кликнул игрок, переворачиваются согласно правилам игры +10
+3. Игра завершается, когда открыты все карточки +10
+4. По окончанию игры выводится её результат - количество ходов, которые понадобились для завершения игры +10
+5. Результаты последних 10 игр сохраняются в local storage. Есть таблица рекордов, в которой сохраняются результаты предыдущих 10 игр +10
+6. По клику на карточку – она переворачивается плавно, если пара не совпадает – обе карточки так же плавно переварачиваются рубашкой вверх +10
+7. Очень высокое качество оформления приложения и/или дополнительный не предусмотренный в задании функционал, улучшающий качество приложения +10
+    высокое качество оформления приложения предполагает собственное оригинальное оформление равное или отличающееся в лучшую сторону по сравнению с демо
+
+7ой пункт на усмотрение проверяющего, потому что я особо в дизайне ничего не менял(уже не успеваю и не успею). Предыдущие 6 пунктов я вроде выполнил. 
+Спасибо за отклик. Удачи в дальнейшей учебе!
+`)
+
 const cards = document.querySelectorAll('.memory-card');
 const restart = document.querySelector('.reset-icon');
 const showMenu = document.querySelector('.table-icon');
@@ -53,7 +69,7 @@ function flipCard() {
     scoreRecordsH2.textContent = `Your Score: ${step}`;
     scoreMain.textContent = `Score: ${step}`;
    
-    console.log(`step = ${step}`);
+    // console.log(`step = ${step}`);
     
     // hasFlippedCard = false;
 
@@ -77,7 +93,7 @@ function checkForMath() {
         
         count = 0;
     }   
-    console.log(`count: ${count}`);
+    // console.log(`count: ${count}`);
 }
 
 function disableCards(){
@@ -138,11 +154,11 @@ function shuffle() {
     randomArr.sort(() => Math.random() - 0.5);
 
     
-    cards.forEach((card, index) => {
-        card.style.order = randomArr[index];
+    // cards.forEach((card, index) => {
+    //     card.style.order = randomArr[index];
         
-        console.log(`${card.dataset.framework} = ${ randomArr[index]}`);        
-    })
+    //     console.log(`${card.dataset.framework} = ${ randomArr[index]}`);        
+    // })
     // console.log(randomArr);
 }
 
