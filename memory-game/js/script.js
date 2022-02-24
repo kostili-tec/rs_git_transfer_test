@@ -154,11 +154,11 @@ function shuffle() {
     randomArr.sort(() => Math.random() - 0.5);
 
     
-    // cards.forEach((card, index) => {
-    //     card.style.order = randomArr[index];
+    cards.forEach((card, index) => {
+        card.style.order = randomArr[index];
         
-    //     console.log(`${card.dataset.framework} = ${ randomArr[index]}`);        
-    // })
+        // console.log(`${card.dataset.framework} = ${ randomArr[index]}`);        
+    })
     // console.log(randomArr);
 }
 
