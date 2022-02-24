@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> 
     <title>Memory game</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/e5923e30d3.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="wrapper">
     <main class="main">
         <div class="container">
             <section class="memory-game">
@@ -75,48 +79,41 @@
 
 
             </section>
-            <section class="table-records">
-              <div class="score"><h2>Your Score:</h2></div>
+            <section class="table-records" hidden>
+              <div class="score"><h2 class="score-records__h2">Your Score:</h2></div>
                 <div class="records">
-                  <div class="record">
-                    <h3>1. 12 шагов</h3>
-                  </div>
-                  <div class="record">
-                    <h3>
-                      2. 15 шагов
-                    </h3>
-                  </div>
-                  <div class="record">
-                    <h3>3. ...</h3>
-                  </div>
-                  <div class="record">
-                    <h3>4. ...</h3>
-                  </div>
-                  <div class="record">
-                    <h3>5. ...</h3>
-                  </div>
-                  <div class="record">
-                    <h3>6. ...</h3>
-                  </div>
-                  <div class="record">
-                    <h3>7. ...</h3>
-                  </div>
-                  <div class="record">
-                    <h3>8. ...</h3>
-                  </div>
-                  <div class="record">
-                    <h3>9. ...</h3>
-                  </div>
-                  <div class="record">
-                    <h3>10. ...</h3>
-                  </div>
+                  <ol class="records__ol">                    
+                  </ol>
+                </div>
+                <div class="control">
+                  <button class="control__btn new-game__btn">New Game?</button>
+                  <button class="control__btn reset__btn">Reset</button>
                 </div>
             </section>
+            <article class="score-main">
+              <h3 class="score-main__h3">Score:</h3>
+            </article>
+
             <div class="restart">
-              <i class="icon fa-solid fa-arrow-rotate-right"></i>
+              <i class="table-icon fa-solid fa-bars"></i>
+              <i class="reset-icon fa-solid fa-arrow-rotate-right"></i>
             </div>
         </div>
     </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="github__footer">
+          <p>©  2022</p>
+          <a href="https://github.com/kostili-tec/">kostili-tec</a>
+        </div>
+        <div class="rsschool__footer">
+          <a href="https://rs.school/js-stage0/"><img src="./assets/img/rsschool.png" alt=""></a>
+          
+        </div>
+
+      </div>
+    </footer>
     <script src="./js/script.js"></script>
+  </div>
 </body>
 </html>
