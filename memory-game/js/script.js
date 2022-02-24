@@ -70,16 +70,13 @@ function checkForMath() {
     }
 
     if (count == 6) {
-        alert('WIN');
-        // addScore();
+        
         saveLocalResult(step);
         createScore();
         showHideScore(true);
-        // saveLocalStore();
-        // loadLocalStore();
+        
         count = 0;
-    }
-    // isMatch ? count++ : count--;
+    }   
     console.log(`count: ${count}`);
 }
 
@@ -194,30 +191,6 @@ function deleteLocalScore(){
     arrResults.splice(0, arrResults.length);
     localStorage.setItem('arrResultsLocal', JSON.stringify(arrResults));
     clearScore();
-}
-
-
-
-
-
-// ============ OLD
-
-function saveLocalStore() {
-    localStorage.storedList = scoreList.innerHTML;
-}
-
-function loadLocalStore(){
-    scoreList.innerHTML = localStorage.storedList;
-}
-
-
-
-function addScore(){
-    let newScore = document.createElement("li");
-    newScore.classList.add('round');
-    newScore.textContent = `Score: ${step}`;
-    scoreList.append(newScore);
-    saveLocalStore();
 }
 
 
