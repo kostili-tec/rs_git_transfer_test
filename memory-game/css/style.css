@@ -4,13 +4,22 @@
     box-sizing: border-box;
     font-family: 'Gloria Hallelujah', cursive;
 }
+html{
+    height: 100%;
+}
+body {
+    height: 100%;   
+    overflow: hidden;
+}
 
-.main{
-
+.wrapper{    
+    height: 100%;
+    overflow: hidden;
 }
 
 .container{
-    height: 100vh;
+    
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,7 +102,7 @@
 
 .restart{
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
     color: white;
     font-size: 2rem;
@@ -139,24 +148,46 @@
     overflow: hidden;
 }
 .control__btn:hover{
-    /* background: rgba(0, 0, 0, 0.384); */
+    background: rgba(0, 0, 0, 0.384);
 }
-.control__btn:before {
-	content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #4f194e;
-    transform: translateX(-100%);
-}
-.control__btn:hover:before {
-    transform: translateX(0);
-}
+
 .new-game__btn{
     border-right: 2px solid white;
 }
 .reset__btn{
     border-left: 2px solid white;
+}
+
+.footer{
+    background-color: #111;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+
+}
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 10px 10px;
+}
+.github__footer{
+    color: white;
+    display: flex;
+    font-size: 30px;
+}
+
+.github__footer a{
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+}
+.rsschool__footer img {
+    display: flex;
+    width: 150px;
+    height: auto;
+    -webkit-filter: drop-shadow(0 0 4px rgba(184, 183, 183, 0.5));
+    filter: drop-shadow(0 0 4px rgba(184, 183, 183, 0.5));
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
 }
