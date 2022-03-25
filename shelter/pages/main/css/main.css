@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'Arial Regular';
+  src: url("../../../assets/fonts/ArialMT.eot");
+  src: url("../../../assets/fonts/ArialMT.eot");
+  src: url("../../../assets/fonts/ArialMT.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/ArialMT.woff") format("woff"), url("../../../assets/fonts/ArialMT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url("../../../assets/fonts/Arial-ItalicMT.eot");
+  src: local("Arial Italic"), local("Arial-ItalicMT"), url("../../../assets/fonts/Arial-ItalicMT.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Arial-ItalicMT.woff") format("woff"), url("../../../assets/fonts/Arial-ItalicMT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Georgia';
+  src: url("../../../assets/fonts/Georgia-Bold.eot");
+  src: local("Georgia Bold"), local("Georgia-Bold"), url("../../../assets/fonts/Georgia-Bold.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff"), url("../../../assets/fonts/Georgia-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Georgia';
+  src: url("../../../assets/fonts/Georgia.eot");
+  src: local("Georgia"), url("../../../assets/fonts/Georgia.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Georgia.woff") format("woff"), url("../../../assets/fonts/Georgia.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Georgia';
+  src: url("../../../assets/fonts/Georgia-Italic.eot");
+  src: local("Georgia Italic"), local("Georgia-Italic"), url("../../../assets/fonts/Georgia-Italic.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Georgia-Italic.woff") format("woff"), url("../../../assets/fonts/Georgia-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+.header-container, .nav .nav-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFF;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ======== HEADER ======== */
+.header-container {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: -126px;
+}
+
+.logo {
+  padding-left: 35px;
+}
+
+.logo-title {
+  font: normal 400 32px "Georgia", serif;
+  color: #F1CDB3;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+.logo-under__title {
+  font: normal 400 15px "Arial Regular", arial;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+}
+
+.nav .nav-list {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+}
+
+.nav .nav-item {
+  margin-right: 35px;
+}
+
+.nav .nav-link {
+  text-decoration: none;
+  font: normal 400 15px "Arial Regular", arial;
+}
+
+.start-content {
+  width: 1280px;
+  height: 908px;
+  background-image: url(../../../assets/images/start-screen-background.jpg);
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=main.css.map */
