@@ -102,8 +102,39 @@ body{
        .nav-link{
            text-decoration: none;
            font: $arial-regular;
-           color: $color-light-s;
+           color: $color-dark-s;
+           cursor: pointer;
+           position: relative;
        }
+}
+.nav-link{
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -8px;
+        width: 0;
+        height: 3px;       
+        background-color: $color-primary;
+        transition: width 0.5s;
+    }
+    &:hover:after{
+        content: "";
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        height: 3px;
+        
+        background-color: $color-primary;
+        transition: width 0.5s;
+    }
+    &:hover{
+        color: $color-light-s;
+        transition: 0.5s;
+    }
 }
 
 .main{
@@ -113,10 +144,15 @@ body{
     max-width: 1280px;
     height: 908px;
     padding: 0 40px;
-    background-image: url(../../../assets/images/start-screen-background.jpg);
+    background-image: url(../../../assets/images/start-screen-gradient-background.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    @extend %flex-wrap;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+
 }
 .start-content{
     width: 1280px;
@@ -125,17 +161,44 @@ body{
     z-index: 1;
 }
 .start-content__screen{
-    padding-top: 340px;
+    padding-bottom: 244px;
+    max-width: 460px;
 }
 .heading{
     font: $georgia-regular;
     color: $color-light-xl;
     font-size: 44px;
     line-height: 130%;
+    margin-top: 5px;
+
 }
 .subheading{
     font: $arial-regular;
     color: $color-dark-s;
     line-height: 160%;
     max-width: 460px;
+    padding-top: 5px;
+}
+
+.button{
+    border: none;
+    border-radius: 100px;
+    background-color: $color-primary;
+    width: 207px;
+    height: 52px;
+    overflow: hidden;
+    cursor: pointer;
+    font: $georgia-regular;
+    color: $color-dark-3xl;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+.main-button{
+    margin-top: 25px;
+}
+.start-content__img{
+    position: relative;
+    max-width: 698px;
+    max-height: 728px;
 }
