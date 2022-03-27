@@ -140,6 +140,7 @@ body{
 .main{
     // width: 1280px;    
 }
+/* ======= Start-section ========== */
 .start-container {
     max-width: 1280px;
     height: 908px;
@@ -202,3 +203,47 @@ body{
     max-width: 698px;
     max-height: 728px;
 }
+/* ======= Start-section END ========== */
+
+/* ======= About-section ========== */
+.about{
+    height: 588px;
+}
+.height-container{
+    height: inherit;
+}
+.about-contant{
+    @extend %flex-wrap;
+    flex-direction: row;
+    // align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-top: 80px;
+    gap: 120px;
+}
+.about-pets{
+    width: 300px;
+    height: 408px;
+}
+.about-text {
+    width: 430px;
+    height: 380px;
+    padding-top: 14px;
+    h3 {
+        font: $georgia-regular;
+        color: $color-dark-l;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        margin: 0px;
+    }
+    p{
+        font: $arial-regular;
+        color: $color-dark-xl;
+        font-size: 15px;
+        line-height: 160%;
+        margin: 25px 0px;
+    }
+}
+
+/* ======= About-section END ========== */
