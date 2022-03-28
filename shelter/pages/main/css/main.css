@@ -39,7 +39,7 @@
   font-style: italic;
 }
 
-.header-container, .pets-contant__slider, .slider-card, .help-contant .list-item {
+.header-container, .pets-contant__slider, .slider-card, .help-contant .list-item, .card {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -49,7 +49,7 @@
           flex-wrap: nowrap;
 }
 
-.header__container, .logo, .nav .nav-list, .start-container, .about-contant, .pets-contant, .help-contant, .help-contant .help-contant__list {
+.header__container, .logo, .nav .nav-list, .start-container, .about-contant, .pets-contant, .help-contant, .help-contant .help-contant__list, .donation-contant {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -518,4 +518,89 @@ body {
 }
 
 /* ======= Help-section END ========== */
+/* ======= Donation-section ========== */
+.donation {
+  height: 462px;
+}
+
+.donation-contant {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.donation-contant .donation-contant__dog {
+  height: 261px;
+}
+
+.donation-contant .donation-contant__info {
+  max-width: 380px;
+  max-height: 282px;
+}
+
+.donation-contant .donation-contant__info h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.donation-contant .donation-contant__info h5 {
+  margin: 20px 0;
+}
+
+.donation-contant .donation-contant__info .lorem-p {
+  font: italic 400 12px "Arial", arial;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B2B2B2;
+  margin-top: 20px;
+}
+
+.card {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 349px;
+  height: 43px;
+  -webkit-border-radius: 9px;
+          border-radius: 9px;
+  background-color: #F1CDB3;
+  padding: 0 15px;
+}
+
+.card img {
+  width: 30px;
+  height: 23px;
+}
+
+.card .card-numbers {
+  font: normal 400 32px "Georgia", serif;
+  font-size: 20px;
+  color: #545454;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+/* ======= Donation-section END ========== */
 /*# sourceMappingURL=main.css.map */
