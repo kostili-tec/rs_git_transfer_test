@@ -7,9 +7,12 @@ $color-dark-s: #CDCDCD;
 $color-dark-3xl: #292929;
 $color-dark-l: #545454;
 $color-dark-xl: #4C4C4C;
+$color-dark-m: #B2B2B2;
+
 
 // ======== fonts ========= //
 $arial-regular: normal 400 15px 'Arial Regular',  arial;
+$arial-italic: italic 400 12px 'Arial',  arial;
 $georgia-regular: normal 400 32px 'Georgia',  serif;
 
 %flex-nowrap {
@@ -20,6 +23,67 @@ $georgia-regular: normal 400 32px 'Georgia',  serif;
     display: flex;
     flex-wrap: wrap;
 }
+%heading2{
+    font: $georgia-regular;
+    color: $color-dark-l;
+    font-size: 44px;
+    line-height: 130%;
+}
+%heading3{
+    font: $georgia-regular;
+    color: $color-dark-l;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+%heading4{
+    font: $georgia-regular;
+    color: $color-dark-l;
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+%heading5{
+    font: $georgia-regular;
+    color: $color-dark-l;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+%ParagraphL{
+    font: $arial-regular;
+    color: $color-dark-xl;
+    font-size: 15px;
+    line-height: 160%;   
+}
+%ParagraphS{
+    font: $arial-italic;
+    color: $color-dark-m;
+    font-size: 12px;
+    line-height: 150%;
+}
+%button{
+    border: none;
+    border-radius: 100px;
+    background-color: $color-primary;
+    width: 207px;
+    height: 52px;
+    overflow: hidden;
+    cursor: pointer;
+    font: $georgia-regular;
+    color: $color-dark-3xl;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+%buttonWhite{
+    @extend %button;
+    border: 2px solid $color-primary;   
+    background-color: transparent;
+}
+
+
+
 html{
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -34,6 +98,18 @@ body{
     // width: 1280px;
     margin: 0 auto;    
     max-width: 1280px;
+}
+h2{
+    @extend %heading2;
+}
+h3{
+    @extend %heading3;
+}
+h4{
+    @extend %heading4;
+}
+h5{
+    @extend %heading5;
 }
 
 .container {
@@ -137,9 +213,9 @@ body{
     }
 }
 
-.main{
-    // width: 1280px;    
-}
+// .main{
+//     // width: 1280px;    
+// }
 /* ======= Start-section ========== */
 .start-container {
     max-width: 1280px;
@@ -157,43 +233,25 @@ body{
 }
 .start-content{
     width: 1280px;
-    height: 908px;
-    
+    height: 908px;    
     z-index: 1;
 }
 .start-content__screen{
     padding-bottom: 244px;
     max-width: 460px;
 }
-.heading{
-    font: $georgia-regular;
+.heading{    
     color: $color-light-xl;
-    font-size: 44px;
-    line-height: 130%;
     margin-top: 5px;
-
 }
 .subheading{
-    font: $arial-regular;
+    @extend %ParagraphL;
     color: $color-dark-s;
-    line-height: 160%;
     max-width: 460px;
     padding-top: 5px;
 }
-
 .button{
-    border: none;
-    border-radius: 100px;
-    background-color: $color-primary;
-    width: 207px;
-    height: 52px;
-    overflow: hidden;
-    cursor: pointer;
-    font: $georgia-regular;
-    color: $color-dark-3xl;
-    font-size: 17px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
+    @extend %button;
 }
 .main-button{
     margin-top: 25px;
@@ -229,21 +287,72 @@ body{
     width: 430px;
     height: 380px;
     padding-top: 14px;
-    h3 {
-        font: $georgia-regular;
-        color: $color-dark-l;
-        font-size: 35px;
-        line-height: 130%;
-        letter-spacing: 0.06em;
+    h3 {        
         margin: 0px;
     }
     p{
-        font: $arial-regular;
-        color: $color-dark-xl;
-        font-size: 15px;
-        line-height: 160%;
+        @extend %ParagraphL;        
         margin: 25px 0px;
     }
 }
-
 /* ======= About-section END ========== */
+
+/* ======= Pets-section  ========== */
+.pets{
+    height: 877px;
+}
+.pets-contant{
+    @extend %flex-wrap;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px;
+    h3{
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+    button {
+        width: 261px;
+    }
+}
+.pets-contant__slider{
+    @extend %flex-nowrap;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 90px;
+    margin-bottom: 60px;
+    .slider-button{
+        @extend %buttonWhite;
+        width: 52px;
+        position: absolute;
+        padding-bottom: 7px;
+    }
+    .prev-button{        
+        left: -105px;
+        // margin-left: 37px;
+    }
+    .next-button{ 
+        right: -105px;
+        img{
+            transform: rotate(0.5turn);
+        } 
+    }
+}
+.slider-card{   
+    h4 {
+        margin: 30px 0;
+    }
+    button{
+        @extend %buttonWhite;
+        width: 187px;  
+    }
+    @extend %flex-nowrap;
+    flex-direction: column;
+    align-items: center;    
+    width: 270px;
+    height: 435px;
+}
+
+/* ======= Pets-section END ========== */
