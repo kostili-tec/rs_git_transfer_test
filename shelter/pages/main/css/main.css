@@ -39,7 +39,7 @@
   font-style: italic;
 }
 
-.header-container, .pets-contant__slider, .slider-card, .help-contant .list-item, .card {
+.header-container, .pets-contant__slider, .slider-card, .help-contant .list-item, .card, .footer-contant, .footer-contant .footer-contant__social {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -49,7 +49,7 @@
           flex-wrap: nowrap;
 }
 
-.header__container, .logo, .nav .nav-list, .start-container, .about-contant, .pets-contant, .help-contant, .help-contant .help-contant__list, .donation-contant {
+.header__container, .logo, .nav .nav-list, .start-container, .about-contant, .pets-contant, .help-contant, .help-contant .help-contant__list, .donation-contant, .footer-flex {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -538,7 +538,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
-  margin-top: 80px;
+  padding-top: 80px;
 }
 
 .donation-contant .donation-contant__dog {
@@ -603,4 +603,87 @@ body {
 }
 
 /* ======= Donation-section END ========== */
+/* =======Footer ========== */
+.footer {
+  height: 350px;
+  background-image: url(../../../assets/images/footer-gradient-background.jpg);
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.footer-flex {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.footer-flex img {
+  position: relative;
+}
+
+.footer-contant {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-contant h3 {
+  color: #FFF;
+}
+
+.footer-contant .footer-contant__social {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-contant a {
+  text-decoration: none;
+  font: normal 400 32px "Georgia", serif;
+  color: #F1CDB3;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+.footer-icon:nth-of-type(1) {
+  width: 40px;
+  height: 26px;
+}
+
+.footer-icon:nth-of-type(2) {
+  width: 40px;
+  height: 32px;
+}
+
+.footer-icon:nth-of-type(3) {
+  width: 22px;
+  height: 32px;
+}
+
+.footer-icon:nth-of-type(4) {
+  width: 22px;
+  height: 32px;
+}
+
+/* =======Footer END ========== */
 /*# sourceMappingURL=main.css.map */

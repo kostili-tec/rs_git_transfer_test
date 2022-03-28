@@ -406,7 +406,7 @@ h5{
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-top: 80px;
+    padding-top: 80px;
     .donation-contant__dog{
         height: 261px;
     }
@@ -452,3 +452,59 @@ h5{
     }
 }
   /* ======= Donation-section END ========== */
+
+  /* =======Footer ========== */
+.footer{
+    height: 350px;
+    background-image: url(../../../assets/images/footer-gradient-background.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.footer-flex{
+    @extend %flex-wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    img{
+        position: relative;
+    }
+}
+.footer-contant{
+    @extend %flex-nowrap;
+    flex-direction: column;
+    h3{
+        color: $color-light-xl;
+    }
+    .footer-contant__social{
+        @extend %flex-nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    a{
+        text-decoration: none;
+        font: $georgia-regular;
+        color: $color-primary;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+    }    
+}
+.footer-icon:nth-of-type(1){
+    width: 40px;
+    height: 26px;
+}
+.footer-icon:nth-of-type(2){
+    width: 40px;
+    height: 32px;
+}
+.footer-icon:nth-of-type(3){
+    width: 22px;
+    height: 32px;
+}
+.footer-icon:nth-of-type(4){
+    width: 22px;
+    height: 32px;
+}
+
+  /* =======Footer END ========== */
