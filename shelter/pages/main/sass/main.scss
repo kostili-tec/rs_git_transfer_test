@@ -3,11 +3,13 @@
 $color-primary: #F1CDB3;
 $color-light-xl: #FFF;
 $color-light-s: #FAFAFA;
+$color-light-l: #F6F6F6;
 $color-dark-s: #CDCDCD;
 $color-dark-3xl: #292929;
 $color-dark-l: #545454;
 $color-dark-xl: #4C4C4C;
 $color-dark-m: #B2B2B2;
+
 
 
 // ======== fonts ========= //
@@ -237,7 +239,7 @@ h5{
     z-index: 1;
 }
 .start-content__screen{
-    padding-bottom: 244px;
+    padding-bottom: 240px;
     max-width: 460px;
 }
 .heading{    
@@ -255,6 +257,11 @@ h5{
 }
 .main-button{
     margin-top: 25px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+
 }
 .start-content__img{
     position: relative;
@@ -300,6 +307,7 @@ h5{
 /* ======= Pets-section  ========== */
 .pets{
     height: 877px;
+    background-color: $color-light-l;
 }
 .pets-contant{
     @extend %flex-wrap;
@@ -353,6 +361,8 @@ h5{
     align-items: center;    
     width: 270px;
     height: 435px;
+    background-color: $color-light-s;
+
 }
 
 /* ======= Pets-section END ========== */
@@ -399,6 +409,7 @@ h5{
 
 .donation {
     height: 462px;
+    background-color: $color-light-l;
 }
 .donation-contant{
     @extend %flex-wrap;
@@ -449,6 +460,10 @@ h5{
         color: $color-dark-l;
         line-height: 115%;
         letter-spacing: 0.06em;
+        a{
+            text-decoration: none;
+            color: $color-dark-l;
+        }
     }
 }
   /* ======= Donation-section END ========== */

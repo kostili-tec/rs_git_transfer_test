@@ -293,7 +293,7 @@ body {
 }
 
 .start-content__screen {
-  padding-bottom: 244px;
+  padding-bottom: 240px;
   max-width: 460px;
 }
 
@@ -310,6 +310,10 @@ body {
 
 .main-button {
   margin-top: 25px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px;
 }
 
 .start-content__img {
@@ -368,6 +372,7 @@ body {
 /* ======= Pets-section  ========== */
 .pets {
   height: 877px;
+  background-color: #F6F6F6;
 }
 
 .pets-contant {
@@ -443,6 +448,7 @@ body {
           align-items: center;
   width: 270px;
   height: 435px;
+  background-color: #FAFAFA;
 }
 
 .slider-card h4 {
@@ -521,6 +527,7 @@ body {
 /* ======= Donation-section ========== */
 .donation {
   height: 462px;
+  background-color: #F6F6F6;
 }
 
 .donation-contant {
@@ -600,6 +607,11 @@ body {
   color: #545454;
   line-height: 115%;
   letter-spacing: 0.06em;
+}
+
+.card .card-numbers a {
+  text-decoration: none;
+  color: #545454;
 }
 
 /* ======= Donation-section END ========== */
