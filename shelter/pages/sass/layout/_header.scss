@@ -21,14 +21,14 @@
     // height: 60px;
 }
 .logo {    
-    @extend %flex-wrap;
+    @extend %flex-nowrap;
     flex-direction: column;
     align-items: center;
     // padding-left: 40px;    
 }
 .logo-title{
     font: $georgia-regular;
-    color: $color-primary;
+    // color: $color-primary;
     line-height: 110%;
     letter-spacing: 0.06em;
     margin-bottom: 0;
@@ -37,9 +37,9 @@
         color: inherit;
     }
 }
-.logo-under__title {
+.logo-under_title {
     font: $arial-regular;
-    color: $color-light-xl;
+    // color: $color-light-xl;
     font-size: 13px;
     line-height: 15px;
     letter-spacing: 0.1em;
@@ -62,7 +62,7 @@
        .nav-link{
            text-decoration: none;
            font: $arial-regular;
-           color: $color-dark-s;
+        //    color: $color-dark-s;
            cursor: pointer;
            position: relative;
        }
@@ -99,7 +99,7 @@
 .nav-active{
     // border-bottom: 3px solid $color-primary;
     .nav-link{
-        color: $color-light-s;
+        // color: $color-light-s;
     }
     &:after{
         content: "";
