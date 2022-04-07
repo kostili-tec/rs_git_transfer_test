@@ -4,11 +4,13 @@
     position: sticky;
     height: 120px;
     margin-bottom: 0;
+    background-color: $color-light-xl;
+    z-index: 10;
 }
 .header-container__pets{ 
     height: 60px;   
     padding-top: 0;
-    margin-top: 26px;
+    padding-top: 26px;
     @extend %flex-nowrap;
     flex-direction: row;
     justify-content: space-between;
@@ -50,4 +52,15 @@
         height: 3px;       
         background-color: $color-primary;
     }
+}
+
+
+// Pets
+
+.our-pets__section{
+    height: 1342px;
+}
+
+.slider__pets-page{
+    gap: 30px 40px;
 }

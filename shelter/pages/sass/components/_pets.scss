@@ -14,33 +14,18 @@
         margin-top: 0;
         margin-bottom: 60px;
     }
-    button {
-        width: 261px;
-    }
+    // button {
+    //     width: 261px;
+    // }
 }
 .pets-contant__slider{
-    @extend %flex-nowrap;
+    @extend %flex-wrap;
     flex-direction: row;
     align-items: center;
     position: relative;
     gap: 90px;
     margin-bottom: 60px;
-    .slider-button{
-        @extend %buttonWhite;
-        width: 52px;
-        position: absolute;
-        padding-bottom: 7px;
-    }
-    .prev-button{        
-        left: -105px;
-        // margin-left: 37px;
-    }
-    .next-button{ 
-        right: -105px;
-        img{
-            transform: rotate(0.5turn);
-        } 
-    }
+
 }
 .slider-card{   
     h4 {
@@ -50,6 +35,13 @@
         @extend %buttonWhite;
         width: 187px;  
     }
+    img{
+        position: relative;
+        height: 270px;
+        width: 270px;
+        object-fit: cover;
+        border-radius: 9px 9px 0px 0px;
+        }
     &:hover{
         @extend %hoverCards;
     }
