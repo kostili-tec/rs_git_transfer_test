@@ -1,0 +1,65 @@
+ /* ======= Donation-section ========== */
+
+ .donation {
+    height: 462px;
+    background-color: $color-light-l;
+}
+.donation-contant{
+    @extend %flex-wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 80px;
+    .donation-contant__dog{
+        height: 261px;
+    }
+    .donation-contant__info{
+        max-width: 380px;
+        max-height: 282px;
+        h3{
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        h5{
+            margin: 20px 0;
+        }
+        .lorem-p{
+            font: $arial-italic;
+            font-size: 12px;
+            line-height: 18px;
+            color: $color-dark-m;
+            margin-top: 20px;
+        }
+    }
+}
+.card{
+    @extend %flex-nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 349px;
+    height: 43px;
+    border-radius: 9px;
+    background-color: $color-primary;
+    padding: 0 15px;
+    &:hover{
+        @extend %hoverButton;
+    }
+    img{
+        width: 30px;
+        height: 23px;
+    }
+    .card-numbers{
+        font: $georgia-regular;
+        font-size: 20px;
+        color: $color-dark-l;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        a{
+            text-decoration: none;
+            color: $color-dark-l;
+        }
+    }
+}
+  /* ======= Donation-section END ========== */

@@ -1,0 +1,13 @@
+.button{
+    @extend %button;
+    &:hover{
+        @extend %hoverButton;
+    }
+}
+.main-button{
+    margin-top: 25px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+}

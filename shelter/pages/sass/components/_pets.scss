@@ -1,0 +1,65 @@
+/* ======= Pets-section  ========== */
+.pets{
+    height: 877px;
+    background-color: $color-light-l;
+}
+.pets-contant{
+    @extend %flex-wrap;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px;
+    h3{
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+    button {
+        width: 261px;
+    }
+}
+.pets-contant__slider{
+    @extend %flex-nowrap;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 90px;
+    margin-bottom: 60px;
+    .slider-button{
+        @extend %buttonWhite;
+        width: 52px;
+        position: absolute;
+        padding-bottom: 7px;
+    }
+    .prev-button{        
+        left: -105px;
+        // margin-left: 37px;
+    }
+    .next-button{ 
+        right: -105px;
+        img{
+            transform: rotate(0.5turn);
+        } 
+    }
+}
+.slider-card{   
+    h4 {
+        margin: 30px 0;
+    }
+    button{
+        @extend %buttonWhite;
+        width: 187px;  
+    }
+    &:hover{
+        @extend %hoverCards;
+    }
+    @extend %flex-nowrap;
+    flex-direction: column;
+    align-items: center;    
+    width: 270px;
+    height: 435px;
+    background-color: $color-light-s;
+
+}
+
+/* ======= Pets-section END ========== */

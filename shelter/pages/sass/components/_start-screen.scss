@@ -1,0 +1,40 @@
+/* ======= Start-section ========== */
+.start-container {
+    max-width: 1280px;
+    height: 908px;
+    padding: 0 40px;    
+    background-image: url(../../assets/images/start-screen-gradient-background.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @extend %flex-wrap;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+.start-content{
+    width: 1280px;
+    height: 908px;    
+    z-index: 1;
+}
+.start-content__screen{
+    padding-bottom: 240px;
+    max-width: 460px;
+}
+.heading{    
+    color: $color-light-xl;
+    margin-top: 5px;
+}
+.subheading{
+    @extend %ParagraphL;
+    color: $color-dark-s;
+    max-width: 460px;
+    padding-top: 5px;
+}
+
+.start-content__img{
+    position: relative;
+    max-width: 698px;
+    max-height: 728px;
+}
