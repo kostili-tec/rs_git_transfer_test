@@ -1,0 +1,66 @@
+// Header
+
+.header__pets{
+    position: sticky;
+    height: 120px;
+    margin-bottom: 0;
+    background-color: $color-light-xl;
+    z-index: 10;
+}
+.header-container__pets{ 
+    height: 60px;   
+    padding-top: 0;
+    padding-top: 30px;
+    @extend %flex-nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-title__pets{
+    color: $color-dark-l;
+    position: relative;
+    margin-top: 0;
+}
+
+.logo-under_title__pets {
+    color: $color-dark-3xl;
+
+}
+
+.nav-link__pets{
+    color: $color-dark-l;
+    &:hover{
+        color: $color-dark-3xl;
+        transition: 0.5s;
+    }
+}
+
+
+
+.nav-active__pets{
+    // border-bottom: 3px solid $color-primary;
+    .nav-link__pets{
+        color: $color-dark-3xl;
+    }
+    &:after{
+        content: "";
+        width: 100%;
+        display: block;
+        position: relative;
+        right: 0;
+        bottom: -3px;       
+        height: 3px;       
+        background-color: $color-primary;
+    }
+}
+
+
+// Pets
+
+.our-pets__section{
+    height: 1342px;
+}
+
+.slider__pets-page{
+    gap: 30px 40px;
+}

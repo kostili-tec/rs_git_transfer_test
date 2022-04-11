@@ -1,0 +1,65 @@
+/* =======Footer ========== */
+.footer{
+    height: 350px;
+    background-image: url(../../assets/images/footer-gradient-background.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.footer-flex{
+    @extend %flex-wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 40px;
+    img{
+        position: relative;
+    }
+}
+.footer-contant{
+    @extend %flex-nowrap;
+    flex-direction: column;  
+    justify-content: flex-start;  
+    h3{
+        color: $color-light-xl;
+        margin-top: 20px;        
+    }
+    .footer-contant__social{
+        @extend %flex-nowrap;
+        flex-direction: row;
+        // justify-content: space-between;
+        justify-content: flex-start;
+        align-items: center;
+            &:nth-of-type(1){
+                margin-bottom: 40px;
+            } 
+            .footer-icon{
+                width: 40px;
+                height: 32px;
+                margin-right: 20px;
+            }   
+    }
+    a{
+        text-decoration: none;
+        font: $georgia-regular;
+        color: $color-primary;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+            
+    }   
+}
+.footer-locations{
+    width: 302px;
+    h3{
+        margin-bottom: 30px;
+    }
+    .footer-contant__social{
+        &:nth-of-type(1){
+            margin-bottom: 30px;
+        }
+        .footer-icon{
+            width: 22px;
+            height: 32px;
+        }
+    }    
+}

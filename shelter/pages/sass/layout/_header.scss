@@ -1,0 +1,114 @@
+/* ======== HEADER ======== */
+.header {
+    // width: 1280px;
+    height: 60px;
+    margin-bottom: -60px;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.header__container{
+    @extend %flex-wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.header-container{
+    @extend %flex-nowrap;
+    align-items: center;
+    justify-content: space-between;    
+    padding-top: 40px;
+    // height: 60px;
+}
+.logo {    
+    @extend %flex-nowrap;
+    flex-direction: column;
+    align-items: center;
+    // padding-left: 40px;    
+}
+.logo-title{
+    font: $georgia-regular;
+    // color: $color-primary;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    margin-bottom: 0;
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+}
+.logo-under_title {
+    font: $arial-regular;
+    // color: $color-light-xl;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+}
+
+.nav{
+    .nav-list{
+        @extend %flex-wrap;
+        flex-direction: row;
+        list-style: none;
+        margin-top: 20px;
+    }
+      .nav-item{
+          margin-right: 36px;
+      }
+      .nav-item:last-child{
+          margin-right: 0;
+      }
+       .nav-link{
+           text-decoration: none;
+           font: $arial-regular;
+        //    color: $color-dark-s;
+           cursor: pointer;
+           position: relative;
+       }
+}
+.nav-link{
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -7px;
+        width: 0;
+        height: 3px;       
+        background-color: $color-primary;
+        transition: width 0.5s;
+    }
+    &:hover:after{
+        content: "";
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -7px;
+        height: 3px;
+        
+        background-color: $color-primary;
+        transition: width 0.5s;
+    }
+    &:hover{
+        color: $color-light-s;
+        transition: 0.5s;
+    }
+}
+.nav-active{
+    // border-bottom: 3px solid $color-primary;
+    .nav-link{
+        // color: $color-light-s;
+    }
+    &:after{
+        content: "";
+        width: 100%;
+        display: block;
+        position: relative;
+        right: 0;
+        bottom: -3px;       
+        height: 3px;       
+        background-color: $color-primary;
+    }
+}

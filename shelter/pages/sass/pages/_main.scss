@@ -1,0 +1,28 @@
+.logo-title__main{
+    color: $color-primary;
+}
+
+.logo-under_title__main {
+    color: $color-light-xl;
+}
+
+.nav-link__main{
+    color: $color-dark-s;
+}
+
+.nav-active__main{
+    // border-bottom: 3px solid $color-primary;
+    .nav-link{
+        color: $color-light-s;
+    }
+    &:after{
+        content: "";
+        width: 100%;
+        display: block;
+        position: relative;
+        right: 0;
+        bottom: -3px;       
+        height: 3px;       
+        background-color: $color-primary;
+    }
+}

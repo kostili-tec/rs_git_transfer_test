@@ -1,0 +1,59 @@
+.button{
+    @extend %button;
+    &:hover{
+        @extend %hoverButton;
+    }
+}
+.main-button{
+    margin-top: 25px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.slider-button{
+    @extend %buttonWhite;
+    width: 52px;
+    position: absolute;
+    padding-bottom: 7px;
+}
+.prev-button{        
+    left: -105px;
+    // margin-left: 37px;
+}
+.next-button{ 
+    right: -105px;
+    img{
+        transform: rotate(0.5turn);
+    } 
+}
+.rest-button{
+    width: 261px;
+}
+
+.slider-buttons__container{
+    @extend %flex-nowrap;
+    flex-direction: row;
+    justify-content:  center;    
+    gap: 20px;
+    width: 100%;
+    margin-top: 25px;
+    
+}
+.slider-pets__button{
+    position: relative;
+    font-size: 20px;
+    padding: 1px;
+    &:nth-child(3){
+        background-color: $color-primary;
+    }
+}
+
+.button[disabled=disabled], .button:disabled {
+    color: $color-dark-s;
+    border-color: $color-dark-s;
+    cursor: default;
+    pointer-events: none;
+    // opacity: 0.3;
+}
