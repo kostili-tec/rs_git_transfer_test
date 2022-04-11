@@ -45,6 +45,9 @@
     &:hover{
         @extend %hoverCards;
     }
+    &:hover .button{
+        @extend %hoverButton;
+    }
     @extend %flex-nowrap;
     flex-direction: column;
     align-items: center;    
