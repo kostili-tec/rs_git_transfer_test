@@ -38,7 +38,7 @@
     justify-content:  center;    
     gap: 20px;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 28px;
     
 }
 .slider-pets__button{
@@ -47,6 +47,7 @@
     padding: 1px;
     &:nth-child(3){
         background-color: $color-primary;
+        pointer-events: none;
     }
 }
 

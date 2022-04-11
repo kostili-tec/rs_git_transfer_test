@@ -66,7 +66,8 @@
 }
 %hoverButton{
     background-color: $color-primary-light;
-    border: none;
+    // border: none;
+    border-color: $color-primary-light;
     transition: 0.5s;
 }
 %hoverCards{
