@@ -17,8 +17,7 @@
     @extend %flex-nowrap;
     align-items: center;
     justify-content: space-between;    
-    padding-top: 40px;
-    // height: 60px;
+    padding-top: 60px;
 }
 .logo {    
     @extend %flex-nowrap;
@@ -32,6 +31,7 @@
     line-height: 110%;
     letter-spacing: 0.06em;
     margin-bottom: 0;
+    margin: 0;
     a{
         text-decoration: none;
         color: inherit;
@@ -40,18 +40,18 @@
 .logo-under_title {
     font: $arial-regular;
     // color: $color-light-xl;
-    font-size: 13px;
+    font-size: 1.3rem;
     line-height: 15px;
     letter-spacing: 0.1em;
-    margin-top: 10px;
+    // margin-top: 10px;
+    margin: 10px 0 0;
 }
 
 .nav{
     .nav-list{
         @extend %flex-wrap;
         flex-direction: row;
-        list-style: none;
-        margin-top: 20px;
+        list-style: none;        
     }
       .nav-item{
           margin-right: 36px;
