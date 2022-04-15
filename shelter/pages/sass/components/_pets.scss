@@ -1,6 +1,5 @@
 /* ======= Pets-section  ========== */
-.pets{
-    height: 877px;
+.pets{    
     background-color: $color-light-l;
 }
 .pets-contant{
@@ -8,7 +7,7 @@
     align-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 80px;
+    padding: 80px 0 100px;
     h3{
         text-align: center;
         margin-top: 0;

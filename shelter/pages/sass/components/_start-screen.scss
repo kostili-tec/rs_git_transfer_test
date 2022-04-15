@@ -1,7 +1,6 @@
 /* ======= Start-section ========== */
 .start-container {
-    max-width: 1280px;
-    // height: 908px;
+    max-width: 1280px;    
     padding: 180px 40px 0;    
     background-image: url(../../assets/images/start-screen-gradient-background.jpg);
     background-size: cover;
@@ -14,8 +13,7 @@
 
 }
 .start-content{
-    max-width: 1280px;
-    // height: 908px;    
+    max-width: 1280px;    
     z-index: 1;
 }
 .start-content__screen{
@@ -35,6 +33,30 @@
 
 .start-content__img{
     position: relative;
-    max-width: 698px;
-    max-height: 728px;
+    // max-width: 698px;
+    // max-height: 728px;
+}
+
+@media screen and (max-width: 1279px) {
+    .start-container{
+        align-items: center;
+        justify-content: flex-end;
+        padding: 150px 30px 0;
+       
+    }
+    .start-content__screen{
+        padding-bottom: 100px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        .heading{
+            margin: 0 0 22px;           
+        }
+        a{
+            align-self: center;
+        }
+    }
+    .start-content__img{
+        max-width: calc(100vw / 1.349736379613357);
+    }
 }

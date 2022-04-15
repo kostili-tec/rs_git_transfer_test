@@ -1,7 +1,6 @@
  /* ======= Donation-section ========== */
 
- .donation {
-    height: 462px;
+ .donation {   
     background-color: $color-light-l;
 }
 .donation-contant{
@@ -10,7 +9,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding-top: 80px;
+    padding: 80px 0 100px;
     .donation-contant__dog{
         height: 261px;
     }

@@ -1,7 +1,5 @@
 /* ======= About-section ========== */
-.about{
-    height: 588px;
-}
+
 .height-container{
     height: inherit;
 }
@@ -11,7 +9,7 @@
     // align-items: center;
     justify-content: center;
     align-content: center;
-    padding-top: 80px;
+    padding: 80px 0 100px;
     gap: 120px;
 }
 .about-pets{
