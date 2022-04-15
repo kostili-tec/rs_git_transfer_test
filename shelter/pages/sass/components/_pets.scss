@@ -22,9 +22,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: relative;
-    gap: 90px;
-    margin-bottom: 60px;
     &::before{
         content: url("../../../../shelter/assets/icons/svg/arrow.svg");
         @extend %buttonWhite;
@@ -37,9 +34,24 @@
         transform: rotate(0.5turn);
         @extend %buttonWhite;
         width: 52px;
-        padding: 11px 17px;  
-        
+        padding: 11px 17px;          
     }
+    &::before:hover{
+        @extend %hoverButton;
+    }
+    // &:hover::after{
+    //     @extend %hoverButton;
+    // }
+}
+.slider-container{
+    @extend %flex-nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 52px;
+    gap: 90px;    
+    
 }
 // .pets-contant__slider::before{
 //     &:hover{    
@@ -82,7 +94,11 @@
 
 /* ======= Pets-section END ========== */
 
-@media screen and (max-width: $tablet-width) {
+@media screen and (max-width: $content-width) {
+    .slider-container{
+        padding: 0 12px;
+        gap: 40px;
+    }
     .slider-card:last-child{
         display: none;
     }

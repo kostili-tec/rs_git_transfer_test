@@ -39,7 +39,7 @@
   font-style: italic;
 }
 
-.slider-buttons__container, .header-container, .logo, .footer-contant, .footer-contant .footer-contant__social, .card, .help-contant .list-item, .pets-contant__slider, .slider-card, .header-container__pets {
+.slider-buttons__container, .header-container, .logo, .footer-contant, .footer-contant .footer-contant__social, .card, .help-contant .list-item, .pets-contant__slider, .slider-container, .slider-card, .header-container__pets {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -118,7 +118,7 @@ h5 {
   background-color: transparent;
 }
 
-.button:hover, .card:hover, .slider-card:hover .button {
+.button:hover, .card:hover, .pets-contant__slider:hover::before, .slider-card:hover .button {
   background-color: #FDDCC4;
   border-color: #FDDCC4;
   -webkit-transition: 0.5s;
@@ -184,6 +184,7 @@ body {
 }
 
 .rest-button {
+  margin-top: 60px;
   width: 261px;
   display: inline-block;
   text-align: center;
@@ -805,9 +806,6 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: relative;
-  gap: 90px;
-  margin-bottom: 60px;
 }
 
 .pets-contant__slider::before {
@@ -823,6 +821,25 @@ body {
           transform: rotate(0.5turn);
   width: 52px;
   padding: 11px 17px;
+}
+
+.slider-container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding: 0 52px;
+  gap: 90px;
 }
 
 .slider-card {
@@ -859,7 +876,11 @@ body {
 }
 
 /* ======= Pets-section END ========== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1279px) {
+  .slider-container {
+    padding: 0 12px;
+    gap: 40px;
+  }
   .slider-card:last-child {
     display: none;
   }
