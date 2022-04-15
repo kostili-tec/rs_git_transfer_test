@@ -37,7 +37,7 @@
     // max-height: 728px;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: $content-width) {
     .start-container{
         align-items: center;
         justify-content: flex-end;

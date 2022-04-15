@@ -18,14 +18,38 @@
     // }
 }
 .pets-contant__slider{
-    @extend %flex-wrap;
+    @extend %flex-nowrap;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     position: relative;
     gap: 90px;
     margin-bottom: 60px;
-
+    &::before{
+        content: url("../../../../shelter/assets/icons/svg/arrow.svg");
+        @extend %buttonWhite;
+        width: 52px;
+        padding: 11px 17px;
+        
+    }
+    &::after{        
+        content: url("../../../../shelter/assets/icons/svg/arrow.svg");
+        transform: rotate(0.5turn);
+        @extend %buttonWhite;
+        width: 52px;
+        padding: 11px 17px;  
+        
+    }
 }
+// .pets-contant__slider::before{
+//     &:hover{    
+//         @extend %hoverButton; 
+//     }      
+// }
+// .pets-contant__slider::after:hover{    
+//     @extend %hoverButton;       
+// }
+
 .slider-card{   
     h4 {
         margin: 30px 0;
@@ -57,3 +81,9 @@
 }
 
 /* ======= Pets-section END ========== */
+
+@media screen and (max-width: $tablet-width) {
+    .slider-card:last-child{
+        display: none;
+    }
+}
