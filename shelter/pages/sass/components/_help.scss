@@ -34,7 +34,7 @@
 @media screen and (max-width: $content-width) {
     .help-contant{
         .help-contant__list{
-            gap: 55px calc(100vw / 6.9);
+            @include calcWidth(gap, 55px, 60, 210, 100, 769, 1279);
             // gap: 55px 60px;
             // padding: 0 69px;
             .list-item{           

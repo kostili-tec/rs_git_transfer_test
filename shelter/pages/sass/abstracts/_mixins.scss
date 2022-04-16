@@ -76,3 +76,7 @@
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     transition: 0.5s;
 }
+
+@mixin calcWidth($property, $height, $MinRange, $MaxRange, $Vw, $MinRes, $MaxRes){
+    #{$property}: $height calc(#{$MinRange + px} + (#{$MaxRange} - #{$MinRange}) * ((#{$Vw + vw} - #{$MinRes + px}) / (#{$MaxRes} - #{$MinRes})));
+}
