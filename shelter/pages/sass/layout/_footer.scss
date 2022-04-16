@@ -14,6 +14,12 @@
         position: relative;
     }
 }
+.footer-info__flex-container{
+    @extend %flex-wrap;
+    flex-direction: row;
+    gap: 0 160px;
+    justify-content: space-between;
+}
 .footer-contant{
     @extend %flex-nowrap;
     flex-direction: column;  
@@ -61,4 +67,18 @@
             height: 32px;
         }
     }    
+}
+
+@media screen and (max-width: $content-width) {
+    .footer-flex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 65px 60px;
+        padding-top: 15px;
+    }
+    .footer-info__flex-container{
+        gap: 0 calc(100vw - 708px);
+    }
+    
 }

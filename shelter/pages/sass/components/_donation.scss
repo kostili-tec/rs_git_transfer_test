@@ -62,3 +62,10 @@
     }
 }
   /* ======= Donation-section END ========== */
+
+  @media screen and (max-width: $content-width) {
+    .donation-contant{
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+  }

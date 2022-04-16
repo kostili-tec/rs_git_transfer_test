@@ -21,7 +21,7 @@
         .list-item{
             @extend %flex-nowrap;
             flex-direction: column;
-            align-items: center;
+            align-items: center;            
         }
             h4{
                 margin-top: 30px;
@@ -31,3 +31,16 @@
 
   /* ======= Help-section END ========== */
 
+@media screen and (max-width: $content-width) {
+    .help-contant{
+        .help-contant__list{
+            gap: 55px calc(100vw / 6.9);
+            // gap: 55px 60px;
+            // padding: 0 69px;
+            .list-item{           
+                flex-basis: 170px;
+            }
+        }
+    }
+    
+}

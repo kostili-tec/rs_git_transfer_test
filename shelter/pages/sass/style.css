@@ -49,7 +49,7 @@
           flex-wrap: nowrap;
 }
 
-.header__container, .nav .nav-list, .footer-flex, .start-container, .about-contant, .donation-contant, .help-contant, .help-contant .help-contant__list, .pets-contant {
+.header__container, .nav .nav-list, .footer-flex, .footer-info__flex-container, .start-container, .about-contant, .donation-contant, .help-contant, .help-contant .help-contant__list, .pets-contant {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -402,6 +402,19 @@ body {
   position: relative;
 }
 
+.footer-info__flex-container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0 160px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .footer-contant {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -469,6 +482,30 @@ body {
 .footer-locations .footer-contant__social .footer-icon {
   width: 22px;
   height: 32px;
+}
+
+@media screen and (max-width: 1279px) {
+  .footer-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 65px 60px;
+    padding-top: 15px;
+  }
+  .footer-info__flex-container {
+    gap: 0 -webkit-calc(100vw - 708px);
+    gap: 0 calc(100vw - 708px);
+  }
 }
 
 /* ======= Start-section ========== */
@@ -710,6 +747,17 @@ body {
 }
 
 /* ======= Donation-section END ========== */
+@media screen and (max-width: 1279px) {
+  .donation-contant {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 60px;
+  }
+}
+
 /* ======= Help-section ========== */
 .help-contant {
   -webkit-box-orient: vertical;
@@ -765,6 +813,18 @@ body {
 }
 
 /* ======= Help-section END ========== */
+@media screen and (max-width: 1279px) {
+  .help-contant .help-contant__list {
+    gap: 55px -webkit-calc(100vw / 6.9);
+    gap: 55px calc(100vw / 6.9);
+  }
+  .help-contant .help-contant__list .list-item {
+    -webkit-flex-basis: 170px;
+        -ms-flex-preferred-size: 170px;
+            flex-basis: 170px;
+  }
+}
+
 /* ======= Pets-section  ========== */
 .pets {
   background-color: #F6F6F6;
