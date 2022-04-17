@@ -30,7 +30,7 @@
 }
 /* ======= About-section END ========== */
 
-@media screen and (max-width: $tablet-width) {
+@media screen and (max-width: $content-width) {
     .about-contant{
         flex-direction: column-reverse;
         align-items: center;

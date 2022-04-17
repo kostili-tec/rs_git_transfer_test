@@ -80,3 +80,4 @@
 @mixin calcWidth($property, $height, $MinRange, $MaxRange, $Vw, $MinRes, $MaxRes){
     #{$property}: $height calc(#{$MinRange + px} + (#{$MaxRange} - #{$MinRange}) * ((#{$Vw + vw} - #{$MinRes + px}) / (#{$MaxRes} - #{$MinRes})));
 }
+// argumets can be null

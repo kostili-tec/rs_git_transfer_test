@@ -413,13 +413,13 @@ body {
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .header__burger {
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .header-container {
     padding: 30px 10px 0;
   }
@@ -698,8 +698,35 @@ body {
             align-self: center;
   }
   .start-content__img {
-    max-width: -webkit-calc(100vw / 1.349736379613357);
-    max-width: calc(100vw / 1.349736379613357);
+    width: -webkit-calc(569px + (698 - 569) * ((100vw - 768px) / (1279 - 768)));
+    width: calc(569px + (698 - 569) * ((100vw - 768px) / (1279 - 768)));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .start-container {
+    padding: 150px 10px 0;
+  }
+  .start-content__screen {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .start-content__img {
+    width: -webkit-calc(260px + (569 - 260) * ((100vw - 320px) / (768 - 320)));
+    width: calc(260px + (569 - 260) * ((100vw - 320px) / (768 - 320)));
+  }
+  .heading {
+    font-size: 2.5rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .start-container {
+    height: 823px;
   }
 }
 
@@ -745,7 +772,7 @@ body {
 }
 
 /* ======= About-section END ========== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1279px) {
   .about-contant {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -763,7 +790,7 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .about-text {
     width: 90vw;
   }
@@ -870,7 +897,7 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .card {
     width: 281px;
   }
@@ -1057,7 +1084,7 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .slider-card:nth-last-child(-n+2) {
     display: none;
   }
