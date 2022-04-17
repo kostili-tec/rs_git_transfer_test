@@ -22,23 +22,23 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    &::before{
-        content: url("../../../../shelter/assets/icons/svg/arrow.svg");
-        @extend %buttonWhite;
-        width: 52px;
-        padding: 11px 17px;
+    // &::before{
+    //     content: url("../../../../shelter/assets/icons/svg/arrow.svg");
+    //     @extend %buttonWhite;
+    //     width: 52px;
+    //     padding: 11px 17px;
         
-    }
-    &::after{        
-        content: url("../../../../shelter/assets/icons/svg/arrow.svg");
-        transform: rotate(0.5turn);
-        @extend %buttonWhite;
-        width: 52px;
-        padding: 11px 17px;          
-    }
-    &::before:hover{
-        @extend %hoverButton;
-    }
+    // }
+    // &::after{        
+    //     content: url("../../../../shelter/assets/icons/svg/arrow.svg");
+    //     transform: rotate(0.5turn);
+    //     @extend %buttonWhite;
+    //     width: 52px;
+    //     padding: 11px 17px;          
+    // }
+    // &::before:hover{
+    //     @extend %hoverButton;
+    // }
     // &:hover::after{
     //     @extend %hoverButton;
     // }
@@ -100,6 +100,11 @@
         gap: 40px;
     }
     .slider-card:last-child{
+        display: none;
+    }
+}
+@media screen and (max-width: $tablet-width) {
+    .slider-card:nth-last-child(-n+2){
         display: none;
     }
 }

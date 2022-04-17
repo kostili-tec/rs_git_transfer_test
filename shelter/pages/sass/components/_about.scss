@@ -40,3 +40,9 @@
         padding: 0;
     }
 }
+
+@media screen and (max-width: $tablet-width) {
+    .about-text{
+        width: 90vw;
+    }
+}

@@ -69,3 +69,17 @@
         gap: 60px;
     }
   }
+
+  @media screen and (max-width: $tablet-width) {
+    .card{
+        width: 281px;
+    }
+    .donation-contant .donation-contant__dog{
+        height: auto;
+        width: 100%;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+  }

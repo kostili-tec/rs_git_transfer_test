@@ -79,8 +79,8 @@
     }
     .footer-info__flex-container{
         // gap: 0 calc(100vw - 708px);
-        gap: 0 calc(60px + (350 - 60) * ((100vw - 769px) / (1279 - 768)));
-        @include calcWidth(gap, 0, 60, 350, 100, 769, 1279);
+        // gap: 0 calc(60px + (350 - 60) * ((100vw - 769px) / (1279 - 768)));
+        @include calcWidth(gap, 0, 60, 350, 100, 768, 1279);
     }
     
 }

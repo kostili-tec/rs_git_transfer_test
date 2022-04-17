@@ -73,7 +73,7 @@
     }
     .pets-page__slider{
         // gap: 30px calc(40px + (320 - 40) * ((100vw - 769px) / (1279 - 768)));
-        @include calcWidth(gap, 30px, 40, 320, 100, 769, 1279);
+        @include calcWidth(gap, 30px, 40, 320, 100, 768, 1279);
         // calc(MinRangePX + (MaxRange - MinRange) * ((100vw - MinResolutionPX) / (MaxRes - MinRes))                
     }
     .slider-card__pets-page:nth-last-child(-n+3){
