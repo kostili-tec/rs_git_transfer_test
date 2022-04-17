@@ -104,6 +104,13 @@
     }
 }
 @media screen and (max-width: $tablet-width) {
+    .pets-contant{
+        // padding: 42px 0 100px;
+        padding: 0;
+        h3{
+            margin: 42px 0;
+        }
+    }
     .slider-card:nth-last-child(-n+2){
         display: none;
     }

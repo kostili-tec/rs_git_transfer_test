@@ -176,11 +176,17 @@ body {
 }
 
 .prev-button {
-  left: -105px;
+  -webkit-transform: translateX(87px);
+      -ms-transform: translateX(87px);
+          transform: translateX(87px);
+  left: 0;
 }
 
 .next-button {
-  right: -105px;
+  -webkit-transform: translateX(-87px);
+      -ms-transform: translateX(-87px);
+          transform: translateX(-87px);
+  right: 0;
 }
 
 .next-button img {
@@ -229,6 +235,35 @@ body {
   border-color: #CDCDCD;
   cursor: default;
   pointer-events: none;
+}
+
+@media screen and (max-width: 1279px) {
+  .prev-button {
+    -webkit-transform: translateX(30px);
+        -ms-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  .next-button {
+    -webkit-transform: translateX(-30px);
+        -ms-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .prev-button {
+    -webkit-transform: translate(68px, 263px);
+        -ms-transform: translate(68px, 263px);
+            transform: translate(68px, 263px);
+  }
+  .next-button {
+    -webkit-transform: translate(-68px, 263px);
+        -ms-transform: translate(-68px, 263px);
+            transform: translate(-68px, 263px);
+  }
+  .rest-button {
+    margin: 114px 0 42px;
+  }
 }
 
 .svg-icon {
@@ -1111,6 +1146,12 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+  .pets-contant {
+    padding: 0;
+  }
+  .pets-contant h3 {
+    margin: 42px 0;
+  }
   .slider-card:nth-last-child(-n+2) {
     display: none;
   }
