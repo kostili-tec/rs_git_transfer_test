@@ -959,12 +959,47 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-  .card {
+  .donation-contant {
+    padding: 0;
+  }
+  .donation-contant .donation-contant__info {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 20px;
+  }
+  .donation-contant .donation-contant__info h3 {
+    margin: 42px 0 10px;
+  }
+  .donation-contant .donation-contant__info h5 {
+    margin: 15px 0 20px;
+    letter-spacing: 0;
+  }
+  .donation-contant .donation-contant__info .card {
     width: 281px;
   }
+  .donation-contant .donation-contant__info .card .card-numbers {
+    font-size: 1.5rem;
+  }
+  .donation-contant .donation-contant__info .lorem-p {
+    text-align: justify;
+  }
   .donation-contant .donation-contant__dog {
+    width: -webkit-calc(260px + (505 - 260) * ((100vw - 320px) / (767 - 320)));
+    width: calc(260px + (505 - 260) * ((100vw - 320px) / (767 - 320)));
     height: auto;
-    width: 100%;
+    margin: 20px 0 42px;
   }
   .donation-contant .donation-contant__dog img {
     width: 100%;

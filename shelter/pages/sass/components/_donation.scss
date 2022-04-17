@@ -71,15 +71,39 @@
   }
 
   @media screen and (max-width: $tablet-width) {
-    .card{
-        width: 281px;
-    }
-    .donation-contant .donation-contant__dog{
-        height: auto;
-        width: 100%;
+    .donation-contant {
+        padding: 0;
+        .donation-contant__info{
+            text-align: center;
+            display: flex;            
+            flex-direction: column;
+            align-items: center;
+            padding: 0 20px;
+            h3{
+                margin: 42px 0 10px;
+            }
+            h5{
+                margin: 15px 0 20px;
+                letter-spacing: 0;
+            }
+            .card{
+                width: 281px;
+                .card-numbers{
+                    font-size: 1.5rem;
+                }
+            }
+            .lorem-p{
+                text-align: justify;
+            }
+        }
+        .donation-contant__dog{
+            @include calcWidth(width, null, 260, 505, 100, 320, 767);
+            height: auto;
+            margin: 20px 0 42px;
         img{
             width: 100%;
             height: auto;
+        }
         }
     }
   }
