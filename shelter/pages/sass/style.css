@@ -1039,6 +1039,40 @@ body {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .help-contant {
+    padding: 0;
+  }
+  .help-contant .help-contant__list {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 17px;
+    gap: 30px -webkit-calc(10px + (80 - 10) * ((100vw - 320px) / (767 - 320)));
+    gap: 30px calc(10px + (80 - 10) * ((100vw - 320px) / (767 - 320)));
+    padding: 0 -webkit-calc(15px + (120 - 15) * ((100vw - 320px) / (767 - 320)));
+    padding: 0 calc(15px + (120 - 15) * ((100vw - 320px) / (767 - 320)));
+    margin-bottom: 42px;
+  }
+  .help-contant .help-contant__list .list-item {
+    -webkit-flex-basis: 130px;
+        -ms-flex-preferred-size: 130px;
+            flex-basis: 130px;
+  }
+  .help-contant .help-contant__list h4 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  .help-contant h3 {
+    margin: 42px 0;
+  }
+  .svg-icon {
+    max-height: 50px;
+    max-width: 60px;
+  }
+}
+
 /* ======= Pets-section  ========== */
 .pets {
   background-color: #F6F6F6;
