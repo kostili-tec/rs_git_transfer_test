@@ -555,7 +555,7 @@ body {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 0 160px;
+  gap: 0 140px;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -572,6 +572,7 @@ body {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  max-width: 300px;
 }
 
 .footer-contant h3 {
@@ -650,8 +651,58 @@ body {
     padding-top: 15px;
   }
   .footer-info__flex-container {
-    gap: 0 -webkit-calc(60px + (350 - 60) * ((100vw - 768px) / (1279 - 768)));
-    gap: 0 calc(60px + (350 - 60) * ((100vw - 768px) / (1279 - 768)));
+    gap: 0 -webkit-calc(38px + (350 - 38) * ((100vw - 768px) / (1279 - 768)));
+    gap: 0 calc(38px + (350 - 38) * ((100vw - 768px) / (1279 - 768)));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer-flex {
+    padding-top: 10px;
+    gap: 20px;
+  }
+  .footer-flex .footer-info__flex-container {
+    gap: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer-flex .footer-info__flex-container .footer-contant {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer-flex .footer-info__flex-container .footer-contant .footer-contant__social {
+    margin: 20px 0;
+  }
+  .footer-flex .footer-info__flex-container h3 {
+    font-size: 2.5rem;
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin: 20px 0 20px;
+  }
+  .footer-flex .footer-info__flex-container .footer-locations .footer-contant__social {
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+  }
+  .footer-flex .footer-info__flex-container .footer-locations h3 {
+    max-width: 280px;
+  }
+  .footer-flex img {
+    max-width: 260px;
+    height: auto;
   }
 }
 
@@ -978,6 +1029,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     padding: 0 20px;
+    max-width: 320px;
   }
   .donation-contant .donation-contant__info h3 {
     margin: 42px 0 10px;
