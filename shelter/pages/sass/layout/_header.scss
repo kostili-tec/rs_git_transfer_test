@@ -129,6 +129,7 @@
     background-color: $color-primary;
     position: absolute;
     left: 0;
+    transition: 0.5s all linear;
 }
 .burger__line_first {
     top: 0;

@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const burgItemPets = document.querySelectorAll('.header__burger__pets-page .burger__line');
     const menu = document.querySelector('.nav');
     const menuItem = document.querySelectorAll('.nav-link');
-    console.log(burgItemPets);
 
     let isOpenNav = false;
 

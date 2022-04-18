@@ -431,6 +431,9 @@ body {
   background-color: #F1CDB3;
   position: absolute;
   left: 0;
+  -webkit-transition: 0.5s all linear;
+  -o-transition: 0.5s all linear;
+  transition: 0.5s all linear;
 }
 
 .burger__line_first {
@@ -1411,8 +1414,28 @@ body {
   .nav-active__pets .nav-link__pets {
     color: #FAFAFA;
   }
+  .pets-page__slider {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .slider-card__pets-page:nth-last-child(-n+6) {
+    display: none;
+  }
   .slider-buttons__container {
     gap: 10px;
+  }
+  .pets-page__pets-contant {
+    padding: 0px 0 42px;
+  }
+  .pets-page__pets-contant .pets-page__h3 {
+    margin: 42px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
