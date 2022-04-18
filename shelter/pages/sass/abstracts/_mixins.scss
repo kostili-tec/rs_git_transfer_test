@@ -9,40 +9,40 @@
 %heading2{
     font: $georgia-regular;
     color: $color-dark-l;
-    font-size: 44px;
+    font-size: 4.4rem;
     line-height: 130%;
 }
 %heading3{
     font: $georgia-regular;
     color: $color-dark-l;
-    font-size: 35px;
+    font-size: 3.5rem;
     line-height: 130%;
     letter-spacing: 0.06em;
 }
 %heading4{
     font: $georgia-regular;
     color: $color-dark-l;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 110%;
     letter-spacing: 0.06em;
 }
 %heading5{
     font: $georgia-regular;
     color: $color-dark-l;
-    font-size: 15px;
+    font-size: 1.5rem;
     line-height: 110%;
     letter-spacing: 0.06em;
 }
 %ParagraphL{
     font: $arial-regular;
     color: $color-dark-xl;
-    font-size: 15px;
+    font-size: 1.5rem;
     line-height: 160%;   
 }
 %ParagraphS{
     font: $arial-italic;
     color: $color-dark-m;
-    font-size: 12px;
+    font-size: 1.2rem;
     line-height: 150%;
 }
 %button{
@@ -55,7 +55,7 @@
     cursor: pointer;
     font: $georgia-regular;
     color: $color-dark-3xl;
-    font-size: 17px;
+    font-size: 1.7rem;
     line-height: 130%;
     letter-spacing: 0.06em;
 }
@@ -76,3 +76,8 @@
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     transition: 0.5s;
 }
+
+@mixin calcWidth($property, $height, $MinRange, $MaxRange, $Vw, $MinRes, $MaxRes){
+    #{$property}: $height calc(#{$MinRange + px} + (#{$MaxRange} - #{$MinRange}) * ((#{$Vw + vw} - #{$MinRes + px}) / (#{$MaxRes} - #{$MinRes})));
+}
+// argumets can be null

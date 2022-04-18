@@ -1,6 +1,5 @@
 /* =======Footer ========== */
-.footer{
-    height: 350px;
+.footer{    
     background-image: url(../../assets/images/footer-gradient-background.jpg);
     background-size: cover;
     background-position: center center;
@@ -15,10 +14,17 @@
         position: relative;
     }
 }
+.footer-info__flex-container{
+    @extend %flex-wrap;
+    flex-direction: row;
+    gap: 0 140px;
+    justify-content: space-between;
+}
 .footer-contant{
     @extend %flex-nowrap;
     flex-direction: column;  
-    justify-content: flex-start;  
+    justify-content: flex-start; 
+    max-width: 300px; 
     h3{
         color: $color-light-xl;
         margin-top: 20px;        
@@ -42,7 +48,7 @@
         text-decoration: none;
         font: $georgia-regular;
         color: $color-primary;
-        font-size: 20px;
+        font-size: 2.0rem;
         line-height: 115%;
         letter-spacing: 0.06em;
             
@@ -62,4 +68,58 @@
             height: 32px;
         }
     }    
+}
+
+@media screen and (max-width: $content-width) {
+    .footer-flex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 65px 60px;
+        padding-top: 15px;
+    }
+    .footer-info__flex-container{
+        // gap: 0 calc(100vw - 708px);
+        // gap: 0 calc(60px + (350 - 60) * ((100vw - 769px) / (1279 - 768)));
+        @include calcWidth(gap, 0, 38, 350, 100, 768, 1279);
+    }   
+}
+
+@media screen and (max-width: $tablet-width) {
+    .footer-flex{
+        padding-top: 10px;
+        gap: 20px;
+        .footer-info__flex-container{
+            gap: 0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .footer-contant{            
+                align-items: center;
+                .footer-contant__social{
+                    margin: 20px 0;
+                }
+            }        
+            h3{
+                font-size: 2.5rem;
+                letter-spacing: 0.06em;
+                text-align: center;
+                margin: 20px 0 20px;
+            }
+            .footer-locations{
+                .footer-contant__social{
+                    align-self: flex-start;
+                }
+                h3{
+                    max-width: 280px;
+                }
+            }        
+        }
+        img{
+            max-width: 260px;
+            height: auto;
+        }
+    }
+    
+
 }

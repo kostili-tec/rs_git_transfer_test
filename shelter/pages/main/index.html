@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="../sass/style.css">
     <title>Cozy House</title>
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            <div class="header-container">
-                <div class="logo">
-                    <h1 class="logo-title logo-title__main"><a href="#">Cozy House</a></h1>
-                    <p class="logo-under_title logo-under_title__main">Shelter for pets in Boston</p>
-                </div>
-            
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li class="nav-item nav-active__main">
-                            <a href="#about-nav" class="nav-link nav-link__main">About the shelter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../pets/pets.html" class="nav-link nav-link__main">Our pets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#help-nav" class="nav-link nav-link__main">Help the shelter</a>
-                        </li>
-                        <li class="nav-item nav-link__main">
-                            <a href="#contacts-nav" class="nav-link nav-link__main">Contacts</a>
-                        </li>
-                    </ul>
-                </nav>
+        <div class="container header-container">            
+            <div class="logo">
+                <h1 class="logo-title logo-title__main"><a href="#">Cozy House</a></h1>
+                <p class="logo-under_title logo-under_title__main">Shelter for pets in Boston</p>
             </div>
+        
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item nav-active__main">
+                        <a href="#about-nav" class="nav-link nav-link__main">About the shelter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../pets/pets.html" class="nav-link nav-link__main">Our pets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#help-nav" class="nav-link nav-link__main">Help the shelter</a>
+                    </li>
+                    <li class="nav-item nav-link__main">
+                        <a href="#contacts-nav" class="nav-link nav-link__main">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__burger">
+                <span class="burger__line burger__line_first"></span>
+                <span class="burger__line burger__line_second"></span>
+                <span class="burger__line burger__line_third"></span>
+            </div>           
         </div>
     </header>
 
@@ -52,7 +54,7 @@
             </div>
         </section>
         <section id="about-nav" class="about">
-            <div class="container height-container">
+            <div class="container">
                 <div class="about-contant">
                     <img src="../../assets/images/about-pets.jpg" alt="" class="about-pets">
                     <div class="about-text">
@@ -70,28 +72,30 @@
             </div>
         </section>
         <section id="pets-nav" class="pets">
-            <div class="container height-container">
+            <div class="container">
                 <div class="pets-contant">
                     <h3>Our friends who<br>are looking for a house</h3>
                     <div class="pets-contant__slider">
                         <button class="button slider-button prev-button">
                             <img src="../../assets/icons/svg/arrow.svg" alt="prev">
                         </button>
-                        <div class="slider-card">
-                            <img src="../../assets/images/pets/katrine.png" alt="Katrine">
-                            <h4>Katrine</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-card">
-                            <img src="../../assets/images/pets/jennifer.png" alt="Jennifer">
-                            <h4>Jennifer</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-card">
-                            <img src="../../assets/images/pets/woody.png" alt="Woody">
-                            <h4>Woody</h4>
-                            <button class="button">Learn more</button>
-                        </div>
+                        <div class="slider-container">
+                            <div class="slider-card">
+                                <img src="../../assets/images/pets/katrine.png" alt="Katrine">
+                                <h4>Katrine</h4>
+                                <button class="button">Learn more</button>
+                            </div>
+                            <div class="slider-card">
+                                <img src="../../assets/images/pets/jennifer.png" alt="Jennifer">
+                                <h4>Jennifer</h4>
+                                <button class="button">Learn more</button>
+                            </div>
+                            <div class="slider-card">
+                                <img src="../../assets/images/pets/woody.png" alt="Woody">
+                                <h4>Woody</h4>
+                                <button class="button">Learn more</button>
+                            </div>
+                        </div>    
                         <button class="button slider-button next-button">
                             <img src="../../assets/icons/svg/arrow.svg" alt="next">
                         </button>
@@ -102,7 +106,7 @@
             </div>
         </section>
         <section id="help-nav" class="help">
-            <div class="container height-container">
+            <div class="container">
                 <div class="help-contant">
                     <h3>How you can help<br> our shelter</h3>
                     <div class="help-contant__list">
@@ -165,7 +169,7 @@
             </div>
         </section>
         <section class="donation">
-            <div class="container height-container">
+            <div class="container">
                 <div class="donation-contant">
                     <div class="donation-contant__dog">
                         <img src="../../assets/images/donation-dog.png" alt="dog">
@@ -189,44 +193,45 @@
     </main>
 
     <footer id="contacts-nav" class="footer">
-        <div class="container height-container">
+        <div class="container">
             <div class="footer-flex">
-                <article class="footer-contant footer-contacts">
-                    <h3>For questions<br>and suggestions</h3>
-                    <div class="footer-contant__social">
-                        <svg class="footer-icon"">
-                            <use xlink:href="../../assets/icons/svg/sprite.svg#icon-email"></use>
-                          </svg>
-                        <a href="mailto:email@shelter.com">email@shelter.com</a>
-                    </div>
-                    <div class="footer-contant__social">    
-                        <svg class="footer-icon">
-                            <use xlink:href="../../assets/icons/svg/sprite.svg#icon-phone"></use>
-                          </svg>
-                        <a href="tel:+13 674 567 75 54">+13 674 567 75 54</a>
-                    </div>                    
-                </article>
-                <article class="footer-contant footer-locations">
-                    <h3>We are waiting<br>for your visit</h3>
-                    <div class="footer-contant__social">    
-                        <svg class="footer-icon">
-                            <use xlink:href="../../assets/icons/svg/sprite.svg#icon-marker"></use>
-                          </svg>
-                        <a target="_blank"  href="https://goo.gl/maps/A7nswCCvHZgWRc1G7">1 Central Street, Boston<br>(entrance from the store)</a>
-                    </div>
-                    
-                    <div class="footer-contant__social">    
-                        <svg class="footer-icon">
-                            <use xlink:href="../../assets/icons/svg/sprite.svg#icon-marker"></use>
-                          </svg>
-                        <a target="_blank"  href="https://goo.gl/maps/zztZy2411pa9n3E96">18 South Park, London</a>
-                    </div>
-                    
-                </article>            
+                <div class="footer-info__flex-container">
+                    <article class="footer-contant footer-contacts">
+                        <h3>For questions and suggestions</h3>
+                        <div class="footer-contant__social">
+                            <svg class="footer-icon"">
+                                <use xlink:href="../../assets/icons/svg/sprite.svg#icon-email"></use>
+                              </svg>
+                            <a href="mailto:email@shelter.com">email@shelter.com</a>
+                        </div>
+                        <div class="footer-contant__social">    
+                            <svg class="footer-icon">
+                                <use xlink:href="../../assets/icons/svg/sprite.svg#icon-phone"></use>
+                              </svg>
+                            <a href="tel:+13 674 567 75 54">+13 674 567 75 54</a>
+                        </div>                    
+                    </article>
+                    <article class="footer-contant footer-locations">
+                        <h3>We are waiting for your visit</h3>
+                        <div class="footer-contant__social">    
+                            <svg class="footer-icon">
+                                <use xlink:href="../../assets/icons/svg/sprite.svg#icon-marker"></use>
+                              </svg>
+                            <a target="_blank"  href="https://goo.gl/maps/A7nswCCvHZgWRc1G7">1 Central Street, Boston<br>(entrance from the store)</a>
+                        </div>
+                        
+                        <div class="footer-contant__social">    
+                            <svg class="footer-icon">
+                                <use xlink:href="../../assets/icons/svg/sprite.svg#icon-marker"></use>
+                              </svg>
+                            <a target="_blank"  href="https://goo.gl/maps/zztZy2411pa9n3E96">18 South Park, London</a>
+                        </div>                        
+                    </article>            
+                </div>
                 <img src="../../assets/images/footer-puppy.png" alt="puppy">
             </div>
         </div>
     </footer>
-    
+    <script src="../script.js"></script>
 </body>
 </html>

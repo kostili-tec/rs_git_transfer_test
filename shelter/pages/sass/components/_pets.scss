@@ -1,6 +1,5 @@
 /* ======= Pets-section  ========== */
-.pets{
-    height: 877px;
+.pets{    
     background-color: $color-light-l;
 }
 .pets-contant{
@@ -8,7 +7,7 @@
     align-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 80px;
+    padding: 80px 0 100px;
     h3{
         text-align: center;
         margin-top: 0;
@@ -19,14 +18,50 @@
     // }
 }
 .pets-contant__slider{
-    @extend %flex-wrap;
+    @extend %flex-nowrap;
     flex-direction: row;
     align-items: center;
-    position: relative;
-    gap: 90px;
-    margin-bottom: 60px;
-
+    justify-content: center;
+    // &::before{
+    //     content: url("../../../../shelter/assets/icons/svg/arrow.svg");
+    //     @extend %buttonWhite;
+    //     width: 52px;
+    //     padding: 11px 17px;
+        
+    // }
+    // &::after{        
+    //     content: url("../../../../shelter/assets/icons/svg/arrow.svg");
+    //     transform: rotate(0.5turn);
+    //     @extend %buttonWhite;
+    //     width: 52px;
+    //     padding: 11px 17px;          
+    // }
+    // &::before:hover{
+    //     @extend %hoverButton;
+    // }
+    // &:hover::after{
+    //     @extend %hoverButton;
+    // }
 }
+.slider-container{
+    @extend %flex-nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 52px;
+    gap: 90px;    
+    
+}
+// .pets-contant__slider::before{
+//     &:hover{    
+//         @extend %hoverButton; 
+//     }      
+// }
+// .pets-contant__slider::after:hover{    
+//     @extend %hoverButton;       
+// }
+
 .slider-card{   
     h4 {
         margin: 30px 0;
@@ -58,3 +93,25 @@
 }
 
 /* ======= Pets-section END ========== */
+
+@media screen and (max-width: $content-width) {
+    .slider-container{
+        padding: 0 12px;
+        gap: 40px;
+    }
+    .slider-card:last-child{
+        display: none;
+    }
+}
+@media screen and (max-width: $tablet-width) {
+    .pets-contant{
+        // padding: 42px 0 100px;
+        padding: 0;
+        h3{
+            margin: 42px 0;
+        }
+    }
+    .slider-card:nth-last-child(-n+2){
+        display: none;
+    }
+}

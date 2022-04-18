@@ -18,17 +18,20 @@
     position: absolute;
     padding-bottom: 7px;
 }
-.prev-button{        
-    left: -105px;
+.prev-button{ 
+    transform: translateX(87px);       
+    left: 0;
     // margin-left: 37px;
 }
 .next-button{ 
-    right: -105px;
+    transform: translateX(-87px);
+    right: 0;
     img{
         transform: rotate(0.5turn);
     } 
 }
 .rest-button{
+    margin-top: 60px;
     width: 261px;
     display: inline-block;
     text-align: center;
@@ -47,7 +50,7 @@
 }
 .slider-pets__button{
     position: relative;
-    font-size: 20px;
+    font-size: 2.0rem;
     padding: 1px;
     &:nth-child(3){
         background-color: $color-primary;
@@ -61,4 +64,28 @@
     cursor: default;
     pointer-events: none;
     // opacity: 0.3;
+}
+
+
+@media screen and (max-width: $content-width) {
+    .prev-button{
+        transform: translateX(30px);
+    }
+    .next-button{
+        transform: translateX(-30px);
+    }
+}
+
+@media screen and (max-width: $tablet-width) {
+    .prev-button{
+        transform: translate(68px, 263px);
+        // transform: translateY(263px);
+    }
+    .next-button{
+        transform: translate(-68px, 263px);
+        // transform: translateY(263px);
+    }
+    .rest-button{
+        margin: 114px 0 42px;
+    }
 }

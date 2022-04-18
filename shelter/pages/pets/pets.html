@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="../sass/style.css">
     <title>Our Pets</title>
 </head>
@@ -33,51 +32,56 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="header__burger header__burger__pets-page">
+                    <span class="burger__line burger__line_first"></span>
+                    <span class="burger__line burger__line_second"></span>
+                    <span class="burger__line burger__line_third"></span>
+                </div>           
             </div>
         </div>
     </header>
     <main class="main">
         <section id="pets-nav" class="pets our-pets__section">
-            <div class="container height-container">
-                <div class="pets-contant">
-                    <h3>Our friends who<br>are looking for a house</h3>
-                    <div class="pets-contant__slider slider__pets-page">                       
-                        <div class="slider-card">
+            <div class="container">
+                <div class="pets-contant pets-page__pets-contant">
+                    <h3 class="pets-page__h3">Our friends who<br>are looking for a house</h3>
+                    <div class="pets-page__slider">                       
+                        <div class="slider-card slider-card__pets-page">
                             <img src="../../assets/images/pets/katrine.png" alt="Katrine">
                             <h4>Katrine</h4>
                             <button class="button">Learn more</button>
                         </div>
-                        <div class="slider-card">
+                        <div class="slider-card slider-card__pets-page">
                             <img src="../../assets/images/pets/jennifer.png" alt="Jennifer">
                             <h4>Jennifer</h4>
                             <button class="button">Learn more</button>
                         </div>
-                        <div class="slider-card">
+                        <div class="slider-card slider-card__pets-page">
                             <img src="../../assets/images/pets/woody.png" alt="Woody">
                             <h4>Woody</h4>
                             <button class="button">Learn more</button>
                         </div>
-                        <div class="slider-card">
+                        <div class="slider-card slider-card__pets-page">
                             <img src="../../assets/images/pets/sophia.png" alt="Sophia">
                             <h4>Sophia</h4>
                             <button class="button">Learn more</button>
                         </div>
-                        <div class="slider-card">
+                        <div class="slider-card slider-card__pets-page">
                             <img src="../../assets/images/pets/timmy.png" alt="Timmy">
                             <h4>Timmy</h4>
                             <button class="button">Learn more</button>
                         </div>
-                        <div class="slider-card">
+                        <div class="slider-card slider-card__pets-page">
                             <img src="../../assets/images/pets/charly.png" alt="Charly">
                             <h4>Charly</h4>
                             <button class="button">Learn more</button>
                         </div>
-                        <div class="slider-card">
+                        <div class="slider-card slider-card__pets-page">
                             <img src="../../assets/images/pets/scarlett.png" alt="Scarlett">
                             <h4>Scarlett</h4>
                             <button class="button">Learn more</button>
                         </div>
-                        <div class="slider-card">
+                        <div class="slider-card slider-card__pets-page">
                             <img src="../../assets/images/pets/freddie.png" alt="Freddie">
                             <h4>Freddie</h4>
                             <button class="button">Learn more</button>
@@ -106,43 +110,45 @@
         </section>
     </main>
     <footer id="contacts-nav" class="footer">
-        <div class="container height-container">
+        <div class="container">
             <div class="footer-flex">
-                <article class="footer-contant footer-contacts">
-                    <h3>For questions<br>and suggestions</h3>
-                    <div class="footer-contant__social">
-                        <svg class="footer-icon"">
-                            <use xlink:href="../../assets/icons/svg/sprite.svg#icon-email"></use>
-                          </svg>
-                        <a href="mailto:email@shelter.com">email@shelter.com</a>
-                    </div>
-                    <div class="footer-contant__social">    
-                        <svg class="footer-icon">
-                            <use xlink:href="../../assets/icons/svg/sprite.svg#icon-phone"></use>
-                          </svg>
-                        <a href="tel:+13 674 567 75 54">+13 674 567 75 54</a>
-                    </div>                    
-                </article>
-                <article class="footer-contant footer-locations">
-                    <h3>We are waiting<br>for your visit</h3>
-                    <div class="footer-contant__social">    
-                        <svg class="footer-icon">
-                            <use xlink:href="../../assets/icons/svg/sprite.svg#icon-marker"></use>
-                          </svg>
-                        <a target="_blank"  href="https://goo.gl/maps/A7nswCCvHZgWRc1G7">1 Central Street, Boston<br>(entrance from the store)</a>
-                    </div>
-                    
-                    <div class="footer-contant__social">    
-                        <svg class="footer-icon">
-                            <use xlink:href="../../assets/icons/svg/sprite.svg#icon-marker"></use>
-                          </svg>
-                        <a target="_blank"  href="https://goo.gl/maps/zztZy2411pa9n3E96">18 South Park, London</a>
-                    </div>
-                    
-                </article>            
+                <div class="footer-info__flex-container">
+                    <article class="footer-contant footer-contacts">
+                        <h3>For questions and suggestions</h3>
+                        <div class="footer-contant__social">
+                            <svg class="footer-icon"">
+                                <use xlink:href="../../assets/icons/svg/sprite.svg#icon-email"></use>
+                              </svg>
+                            <a href="mailto:email@shelter.com">email@shelter.com</a>
+                        </div>
+                        <div class="footer-contant__social">    
+                            <svg class="footer-icon">
+                                <use xlink:href="../../assets/icons/svg/sprite.svg#icon-phone"></use>
+                              </svg>
+                            <a href="tel:+13 674 567 75 54">+13 674 567 75 54</a>
+                        </div>                    
+                    </article>
+                    <article class="footer-contant footer-locations">
+                        <h3>We are waiting for your visit</h3>
+                        <div class="footer-contant__social">    
+                            <svg class="footer-icon">
+                                <use xlink:href="../../assets/icons/svg/sprite.svg#icon-marker"></use>
+                              </svg>
+                            <a target="_blank"  href="https://goo.gl/maps/A7nswCCvHZgWRc1G7">1 Central Street, Boston<br>(entrance from the store)</a>
+                        </div>
+                        
+                        <div class="footer-contant__social">    
+                            <svg class="footer-icon">
+                                <use xlink:href="../../assets/icons/svg/sprite.svg#icon-marker"></use>
+                              </svg>
+                            <a target="_blank"  href="https://goo.gl/maps/zztZy2411pa9n3E96">18 South Park, London</a>
+                        </div>                        
+                    </article>            
+                </div>
                 <img src="../../assets/images/footer-puppy.png" alt="puppy">
             </div>
         </div>
     </footer>
+    <script src="../script.js"></script>
 </body>
 </html>

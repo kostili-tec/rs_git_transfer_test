@@ -1,7 +1,6 @@
  /* ======= Donation-section ========== */
 
- .donation {
-    height: 462px;
+ .donation {   
     background-color: $color-light-l;
 }
 .donation-contant{
@@ -10,7 +9,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding-top: 80px;
+    padding: 80px 0 100px;
     .donation-contant__dog{
         height: 261px;
     }
@@ -26,7 +25,7 @@
         }
         .lorem-p{
             font: $arial-italic;
-            font-size: 12px;
+            font-size: 1.2rem;
             line-height: 18px;
             color: $color-dark-m;
             margin-top: 20px;
@@ -52,7 +51,7 @@
     }
     .card-numbers{
         font: $georgia-regular;
-        font-size: 20px;
+        font-size: 2.0rem;
         color: $color-dark-l;
         line-height: 115%;
         letter-spacing: 0.06em;
@@ -63,3 +62,49 @@
     }
 }
   /* ======= Donation-section END ========== */
+
+  @media screen and (max-width: $content-width) {
+    .donation-contant{
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+  }
+
+  @media screen and (max-width: $tablet-width) {
+    .donation-contant {
+        padding: 0;
+        .donation-contant__info{
+            text-align: center;
+            display: flex;            
+            flex-direction: column;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 320px;
+            h3{
+                margin: 42px 0 10px;
+            }
+            h5{
+                margin: 15px 0 20px;
+                letter-spacing: 0;
+            }
+            .card{
+                width: 281px;
+                .card-numbers{
+                    font-size: 1.5rem;
+                }
+            }
+            .lorem-p{
+                text-align: justify;
+            }
+        }
+        .donation-contant__dog{
+            @include calcWidth(width, null, 260, 505, 100, 320, 767);
+            height: auto;
+            margin: 20px 0 42px;
+        img{
+            width: 100%;
+            height: auto;
+        }
+        }
+    }
+  }
