@@ -86,3 +86,26 @@
         margin-top: 9px;
     }
 }
+
+@media screen and (max-width: $tablet-width) {
+    .header-container__pets{
+        padding: 30px 10px 0;
+    }
+    .header__burger__pets-page{
+        margin-top: 20px;
+        .burger__line{
+            background-color: #000;
+        }
+    }
+    .nav-link__pets{
+        color: $color-light-s;
+    }
+    .nav-active__pets{        
+        .nav-link__pets{
+            color: $color-light-s;
+        }
+    }
+    .slider-buttons__container{
+        gap: 10px;
+    }
+}

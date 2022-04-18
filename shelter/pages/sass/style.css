@@ -1394,4 +1394,25 @@ body {
     margin-top: 9px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .header-container__pets {
+    padding: 30px 10px 0;
+  }
+  .header__burger__pets-page {
+    margin-top: 20px;
+  }
+  .header__burger__pets-page .burger__line {
+    background-color: #000;
+  }
+  .nav-link__pets {
+    color: #FAFAFA;
+  }
+  .nav-active__pets .nav-link__pets {
+    color: #FAFAFA;
+  }
+  .slider-buttons__container {
+    gap: 10px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
