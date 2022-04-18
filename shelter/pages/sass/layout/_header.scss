@@ -96,11 +96,7 @@
         transition: 0.5s;
     }
 }
-.nav-active{
-    // border-bottom: 3px solid $color-primary;
-    .nav-link{
-        // color: $color-light-s;
-    }
+.nav-active{  
     &:after{
         content: "";
         width: 100%;
