@@ -1,20 +1,23 @@
 /* ======= Start-section ========== */
-.start-container {
-    max-width: 1280px;    
-    padding: 180px 40px 0;    
+.start-content{  
     background-image: url(../../assets/images/start-screen-gradient-background.jpg);
     background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;      
+    z-index: 1;
+}
+.start-container {
+    max-width: 1280px;    
+    padding: 180px 40px 0;    
+    // background-image: url(../../assets/images/start-screen-gradient-background.jpg);
+    // background-size: cover;
+    // background-position: center center;
+    // background-repeat: no-repeat;
     @extend %flex-wrap;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
 
-}
-.start-content{
-    max-width: 1280px;    
-    z-index: 1;
 }
 .start-content__screen{
     padding-bottom: 240px;
@@ -32,17 +35,14 @@
 }
 
 .start-content__img{
-    position: relative;
-    // max-width: 698px;
-    // max-height: 728px;
+    position: relative;    
 }
 
 @media screen and (max-width: $content-width) {
     .start-container{
         align-items: center;
         justify-content: flex-end;
-        padding: 150px 30px 0;
-        // background-size: 100% 100%;
+        padding: 150px 30px 0;        
     }
     .start-content__screen{
         padding-bottom: 100px;
@@ -56,8 +56,7 @@
             align-self: center;
         }
     }
-    .start-content__img{
-        // max-width: calc(100vw / 1.349736379613357);
+    .start-content__img{        
         @include calcWidth(width, null, 569, 698, 100, 768, 1279);
     }
 }

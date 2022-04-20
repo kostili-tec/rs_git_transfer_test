@@ -151,7 +151,6 @@ html {
 body {
   background-color: #FFF;
   margin: 0 auto;
-  max-width: 1280px;
   font-size: 1.6rem;
 }
 
@@ -710,14 +709,18 @@ body {
 }
 
 /* ======= Start-section ========== */
-.start-container {
-  max-width: 1280px;
-  padding: 180px 40px 0;
+.start-content {
   background-image: url(../../assets/images/start-screen-gradient-background.jpg);
   -webkit-background-size: cover;
           background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.start-container {
+  max-width: 1280px;
+  padding: 180px 40px 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -731,11 +734,6 @@ body {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.start-content {
-  max-width: 1280px;
-  z-index: 1;
 }
 
 .start-content__screen {
