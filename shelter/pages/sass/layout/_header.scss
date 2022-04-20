@@ -167,7 +167,7 @@
         z-index: 10;
         background-color: $color-dark-3xl;
         transform: translateX(100%);
-        transition: 0.5s all linear;
+        // transition: 0.5s all linear;        
         .nav-list{
             flex-direction: column;
             padding: 0;
@@ -184,5 +184,35 @@
     }
     .nav-open{
         transform: translateX(0);
+    }
+    .slide-in{
+        animation-name: slide-in;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        
+    }
+    .slide-out{
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        animation-name: slide-out;
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0%);
+        }
+    }
+    @keyframes slide-out {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(100%);
+        }
     }
 }

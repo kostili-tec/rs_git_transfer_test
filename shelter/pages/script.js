@@ -6,17 +6,22 @@ window.addEventListener('DOMContentLoaded', () => {
     const menuItem = document.querySelectorAll('.nav-link');
 
     let isOpenNav = false;
+    console.log(isOpenNav);
 
     burgItem.addEventListener('click', () => {
         if (isOpenNav){
-            menu.classList.remove('nav-open');
+            menu.classList.add('slide-out');
+            menu.classList.remove('slide-in');
             burgItem.style.transform = '';          
             isOpenNav = false;
+            console.log(isOpenNav);
             burgItemPets.forEach((item) => item.style.backgroundColor = "#000");
         } else {
-            menu.classList.add('nav-open');
+            menu.classList.add('slide-in');
+            menu.classList.remove('slide-out');
             burgItem.style.transform = 'rotate(90deg)';
             isOpenNav = true;
+            console.log(isOpenNav);
             burgItemPets.forEach((item) => item.style.backgroundColor = "#F1CDB3");
         }
                 
